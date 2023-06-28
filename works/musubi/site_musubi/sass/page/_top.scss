@@ -1,0 +1,439 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+// * {
+//     outline: 1px solid magenta;
+// }
+
+#top {
+
+    font-family: $serif;
+.wrapper {
+    position: relative;
+    margin-left: 234px;
+}
+
+.mv {
+
+    position: relative;
+    
+    &__photo {
+        background: url(../images/mv.jpg)center center / cover;
+        height: 100vh;
+    }
+
+    &__catchcopy {
+        position: absolute;
+        top: 189px;
+        right: 207px;
+        z-index: 1;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+// お店について
+.about {
+    margin-bottom: 117px;
+    padding: 141px 0 44px;
+    background: $lightbeige;
+
+    &__container {
+        display: flex;
+    }
+
+    &__pic--01 {
+        z-index: 1;
+        width: 918px;
+        height: 594px;
+    }
+
+    &__img--01 {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__box--01 {
+        padding-left: 195px;
+    }
+    
+    &__ttl {
+        margin-bottom: 56px;
+        font-size: 50px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+
+        &::before {
+            content: "About";
+            display: block;
+            margin-bottom: 16px;
+            padding-left: 7px;
+            color: $beige;
+            font-family: $lusitana;
+            font-size: 20px;
+            letter-spacing: 0.18em;
+        }
+    }
+    
+    &__sub {
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: 1.6;
+    }
+    
+    &__box--02 {
+        position: relative;
+        top: -122px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+    }
+
+    &__pic--02 {
+        width: 889px;
+        height: 594px;
+    }
+
+    &__img--02 {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__txt {
+        padding-right: 140px;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: 2.6;
+    }
+}
+
+//私たちのこだわり
+
+.concept {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 74px;
+
+    &__ttl {
+        margin-bottom: 106px;
+        font-size: 50px;
+        font-weight: 600;
+        text-align: center;
+        letter-spacing: 0.1em;
+
+        &::before {
+            content: "Concept";
+            display: block;
+            margin-bottom: 16px;
+            color: $beige;
+            font-family: $lusitana;
+            font-size: 20px;
+            letter-spacing: 0.18em;
+        }
+    }
+
+
+    &__container {
+        display: flex;
+        gap: 86px;
+        width: 1366px;
+        margin: 0 auto 86px;
+    }
+
+    &__container:nth-of-type(2) {
+        flex-direction: row-reverse;
+
+    }
+
+    &__pic {
+        width: 683px;
+        height: 475px;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+
+    &__sub {
+        position: relative;
+        margin-bottom: 58px;
+        padding-top: 60px;
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: 1.6;
+
+        &::before {
+            position: absolute;
+            top: -72px;
+            left: -51px;
+            z-index: -1;
+            content: "01";
+            display: block;
+            color: $lightbeige;
+            font-size: 232px;
+        }
+
+        &--02::before {
+            content: "02";
+        }
+
+        &--03::before {
+            content: "03";
+        }
+
+    }
+
+
+    &__txt {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        line-height: 2;
+    }
+}
+
+//献立
+.menu {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 160px;
+    padding-top: 131px;
+    background: $lightbeige;
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 545px;
+        background-image: url(../images/menu-bg.jpeg);
+        background-position: 0 -255px;
+        background-size: cover;
+    }
+
+
+
+    &__ttl {
+        margin-bottom: 106px;
+        font-size: 50px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-align: center;
+
+        &::before {
+            content: "Menu";
+            display: block;
+            margin-bottom: 16px;
+            color: $beige;
+            font-family: $lusitana;
+            font-size: 20px;
+            letter-spacing: 0.18em;
+        }
+    }
+
+    &__sub {
+        margin-bottom: 113px;
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-align: center;
+    }
+
+    &__wrap {
+        display: flex;
+        gap: 35px;
+        margin-bottom: 100px;
+    }
+
+    &__box {
+        width: 432px;
+    }
+
+    &__pic {
+        height: 338px;
+        margin-bottom: 41px;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__food {
+        margin-bottom: 13px;
+        font-size: 20px;
+    }
+
+    &__price {
+        margin-bottom: 41px;
+        font-size: 18px;
+    }
+
+    &__txt {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 147px;
+        text-align: center;
+    }
+    
+    &__link {
+        position: relative;
+        display: block;
+        z-index: 1;
+        padding: 15px 0;
+        color: #000;
+        font-size: 16px;
+        text-decoration: none;
+
+        &::after {
+            position: absolute;
+            top: -2px;
+            right: -46px;
+            z-index: -1;
+            content: "";
+            display: block;
+            width: 53px;
+            height: 53px;
+            background: url(../images/btn.png)center center/ cover;
+
+        }
+    }
+}
+
+//店舗情報
+.access {
+    margin: 0 auto;
+
+    &__ttl {
+        margin-bottom: 134px;
+        font-size: 50px;
+        letter-spacing: 0.1em;
+        text-align: center;
+    }
+    
+    &__logo {
+        width: 125px;
+        height: 512px;
+        
+    }
+    
+    
+    &__container {
+        display: flex;
+        justify-content: center;
+        gap: 155px;
+        width: 875px;
+        margin: 0 auto;
+        margin-bottom: 164px;
+    }
+
+    &__dl {
+        display: flex;
+        flex-wrap: wrap;
+        // width: 531px;
+        margin-bottom: 36px;
+    }
+
+    &__dt {
+        width: 30%;
+        font-size: 18px;
+        letter-spacing: 0.1em;
+    }
+
+    &__dt:nth-of-type(1) {
+        line-height: 2;
+    }
+
+    
+    &__dd {
+        width: 70%;
+        margin-bottom: 24px;
+        font-size: 18px;
+    }
+    
+    &__dd:nth-of-type(1) {
+        line-height: 2;
+    }
+    
+    &__box--02 {
+        display: flex;
+        gap: 26px;
+        margin-bottom: 52px;
+    }
+
+    &__icon--01 {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__icon--02 {
+        width: 26px;
+        height: 21px;
+    }
+
+    &__link--01 {
+        display: block;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__btn {
+        width: 288px;
+        text-align: center;
+        
+    }
+    
+    &__btn:nth-of-type(1) {
+        margin-bottom: 17px;
+    }
+    
+    &__link--02 {
+        display: block;
+        padding: 28px 0;
+        background: $beige;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 18px;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        transition: .5s;
+        &:hover {
+            background: $lightbeige;
+        }
+        
+    }
+}
+
+}

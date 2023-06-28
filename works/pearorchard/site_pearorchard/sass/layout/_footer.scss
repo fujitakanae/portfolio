@@ -1,0 +1,134 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.footer {
+    padding-top: 45px;
+    background: $main;
+
+    &__wrap {
+        padding: 0 5%;
+
+        @media screen and (min-width: 1024px) {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1280px;
+            // width: 67%;
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+
+    &__left {
+        margin-bottom: 45px;
+    }
+
+    &__logo {
+        width: 35%;
+        margin-bottom: 7px;
+
+        @media screen and (min-width: 1024px) {
+            width: 68%;
+        }
+    }
+
+    &__img {
+        @include img;
+    }
+
+    &__address {
+        font-size: 14px;
+    }
+
+    &__right {
+        margin-bottom: 50px;
+        padding-top: 25px;
+        border-top: 1px solid #333;
+
+        @media screen and (min-width: 1024px) {
+            border: none;
+        }
+    }
+
+    &__contact {
+        margin-bottom: 10px;
+        font-size: 15px;
+        text-align: center;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 18px;
+            text-align: start;
+        }
+    }
+
+    &__tel {
+        margin-bottom: 15px;
+        font-size: 26px;
+        font-weight: 700;
+        text-align: center;
+
+        @media screen and (min-width: 1024px) {
+            font-size: 36px;
+            text-align: start;
+        }
+    }
+
+    &__inquiry-link {
+        display: block;
+        color: $black;
+        text-decoration: none;
+    }
+
+    &__reception-time {
+        font-size: 14px;
+        text-align: center;
+
+        @media screen and (min-width: 1024px) {
+            text-align: start;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 14px;
+        padding: 0 5%;
+    }
+
+    &__sitepolicy {
+        padding-right: 20px;
+        border-right: 1px solid #333;
+    }
+
+    &__sitepolicy-link {
+        display: block;
+        color: #333;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    &__pravacy {
+        padding-left: 20px;
+    }
+
+    &__pravacy-link {
+        display: block;
+        color: #333;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    &__copy {
+        padding: 13px 0;
+        background: $acc;
+        text-align: center;
+
+        @media screen and (min-width: 1024px) {
+            padding: 13px 0;
+        }
+    }
+
+    &__small {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,1046 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#top {
+
+    //流体シェイプ
+    .mv {
+        margin-bottom: 300px;
+        overflow: hidden;
+        position: sticky;
+        top: 0;
+        z-index: -1;
+
+        @media screen and (min-width: 1024px) {
+            margin-bottom: 250px;
+        }
+
+        &__shape {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+                transform: rotate(-114deg);
+                @media screen and (min-width: 768px) {
+                    max-width: 1000px;
+                    width: 80%;
+                }
+            }
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotate(-114deg);
+        }
+
+        &__shape--01 {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(1.2);
+        }
+
+        &__shape--02 {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(1.2);
+        }
+
+        &__shape--03 {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(1.2);
+        }
+
+        &__shape--04 {
+            position: absolute;
+            z-index: 3;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(1.2);
+        }
+
+        //ボーダーの背景
+        &__bg-border {
+            position: absolute;
+            z-index: 4;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(0deg,
+                    #d9d9d910 50%,
+                    #ffffff10 50%, #ffffff10 100%);
+            background-size: 8px 8px;
+        }
+    }
+
+    .mv__name {
+        position: absolute;
+        z-index: 5;
+        bottom: 92px;
+        left: 8%;
+        font-size: 25px;
+        font-family: $font_en;
+        letter-spacing: 0.1rem;
+        animation: mv-nameFadeup 1s forwards;
+        opacity: 0;
+
+        @media screen and (min-width: 768px) {
+            bottom: 77px;
+            left: 6%;
+            font-size: 40px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            bottom: 116px;
+            left: 106px;
+            left: 5.5%;
+            font-size: 74px;
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+
+    //アバウトセクション
+    .about {
+        padding: 0 8% 100px;
+        background-image: linear-gradient(to bottom, rgba(247, 247, 247, 0) 0%, #f7f7f7 100%);
+
+        @media screen and (min-width: 768px) {
+            padding: 0 13% 100px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding-bottom: 200px;
+            padding-top: 250px;
+        }
+
+        &__wrap {
+            position: relative;
+
+            @media screen and (min-width: 1024px) {
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+        }
+
+        &__pic {
+            position: absolute;
+            top: -256px;
+            right: -24px;
+            width: 273px;
+            height: 280px;
+            opacity: 0;
+            transform: translateY(30px);
+
+            @media screen and (min-width: 768px) {
+                top: -266px;
+                right: -8px;
+                width: 425px;
+                height: 451px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                top: -350px;
+                right: -50px;
+                width: 611px;
+                height: 638px;
+            }
+        }
+
+        &__img {
+            @include img;
+        }
+
+        &__ttl {
+            @include sec-ttl;
+            transform: translateY(30px);
+            opacity: 0;
+
+            @media screen and (min-width: 768px) {
+                @include sec-ttl($margin-bottom: 46px, $font-size: 40px);
+            }
+
+            @media screen and (min-width: 1024px) {
+                @include sec-ttl($margin-bottom: 73px, $font-size: 54px);
+            }
+
+            &::before {
+                content: "introduction";
+                display: block;
+                margin-bottom: 5px;
+                color: $gray;
+                font-size: 10px;
+                font-family: $font_en;
+                font-weight: 500;
+                letter-spacing: 0.2rem;
+                opacity: 0.7;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 13px;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__dl {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: 20px;
+            transform: translateY(30px);
+            opacity: 0;
+
+            @media screen and (min-width: 768px) {
+                margin-bottom: 28px;
+            }
+        }
+
+        &__dt {
+            width: 40%;
+            margin-bottom: 13px;
+            font-size: 13px;
+
+            @media screen and (min-width: 768px) {
+                width: 20%;
+                margin-bottom: 15px;
+                font-size: 14px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 9%;
+                font-size: 16px;
+            }
+
+        }
+
+        &__dd {
+            width: 60%;
+            font-size: 13px;
+
+            @media screen and (min-width: 768px) {
+                width: 80%;
+                font-size: 14px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 91%;
+                font-size: 16px;
+            }
+        }
+
+        &__txt {
+            line-height: 2;
+            opacity: 0;
+            transform: translateY(30px);
+
+            @media screen and (min-width: 768px) {
+                font-size: 13px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 50%;
+                // width: 525px;
+                font-size: 14px;
+            }
+        }
+    }
+
+
+    //MEEKNESSスライド
+    .bg {
+        padding-bottom: 100px;
+        background: #f7f7f7;
+
+        @media screen and (min-width: 768px) {
+            padding-bottom: 141px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding-bottom: 270px;
+        }
+
+        &__box {
+            overflow: hidden;
+            width: auto;
+            max-width: 314px;
+            margin: auto;
+
+            @media screen and (min-width: 768px) {
+                width: auto;
+                max-width: 436px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: auto;
+                max-width: 884px;
+            }
+        }
+
+        &__box:nth-child(1) {
+            opacity: 0;
+            margin-bottom: 20px;
+            height: 33px;
+            transform: translateY(-100%);
+
+            @media screen and (min-width: 1024px) {
+                height: 66px;
+                margin-bottom: 48px;
+            }
+        }
+
+        &__box:nth-child(2) {
+            opacity: 0;
+            margin-bottom: 20px;
+            height: 28px;
+            transform: translateY(-100%);
+
+            @media screen and (min-width: 768px) {
+                height: 39px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                height: 75px;
+                margin-bottom: 48px;
+            }
+        }
+
+        &__box:nth-child(3) {
+            opacity: 0;
+            transform: translateY(-100%);
+
+            @media screen and (min-width: 768px) {
+                height: 59px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                height: 116px;
+            }
+        }
+
+        &__logo--01,
+        &__logo--02,
+        &__logo--03 {
+            width: 100%;
+            height: 40px;
+            margin: 0 auto;
+
+            @media screen and (min-width: 768px) {
+                height: 56px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                height: 114px;
+            }
+        }
+
+        &__logo--01 {
+            background: url(../images/meekness-01.png)center center / cover;
+        }
+
+        &__logo--02 {
+            background: url(../images/meekness-02.png)center center / cover;
+        }
+
+        &__logo--03 {
+            background: url(../images/meekness-03.png)center center / cover;
+        }
+
+    }
+
+    //ワークスセクション
+    .works {
+        padding: 75px 8% 90px;
+        background: #fff;
+        border-radius: 20px;
+
+        @media screen and (min-width: 768px) {
+            padding: 141px 6%;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding: 212px 8%;
+            border-radius: 40px;
+        }
+
+        &__ttl {
+            @include sec-ttl;
+
+            @media screen and (min-width: 768px) {
+                @include sec-ttl($margin-bottom: 70px, $font-size: 40px);
+            }
+
+            @media screen and (min-width: 1024px) {
+                @include sec-ttl($margin-bottom: 106px, $font-size: 54px);
+            }
+
+            &::before {
+                content: "production";
+                display: block;
+                margin-bottom: 5px;
+                color: $gray;
+                font-size: 10px;
+                font-family: $font_en;
+                font-weight: 500;
+                letter-spacing: 0.2em;
+                opacity: 0.7;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 13px;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__wrap {
+            @media screen and (min-width: 768px) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 141px;
+
+                @media screen and (min-width: 1024px) {
+                    margin-bottom: 212px;
+                }
+            }
+        }
+
+        &__pic {
+            width: 100%;
+            margin-bottom: 75px;
+            border-radius: 20px;
+            overflow: hidden;
+
+            @media screen and (min-width: 768px) {
+                width: 46%;
+                margin-bottom: 54px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 129px;
+            }
+
+            &:nth-of-type(2) {
+                @media screen and (min-width: 768px) {
+                    transform: translateY(63px);
+                }
+
+                @media screen and (min-width: 1024px) {
+                    transform: translateY(160px);
+                }
+            }
+
+            &:nth-of-type(4) {
+                @media screen and (min-width: 768px) {
+                    transform: translateY(63px);
+                }
+
+                @media screen and (min-width: 1024px) {
+                    transform: translateY(160px);
+                }
+            }
+        }
+
+        &__img {
+            @include img;
+            height: auto;
+            transition: .8s;
+
+            @media screen and (min-width: 1024px) {
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        &__btn {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+    }
+
+    //スキルセクション
+    .skill {
+        padding: 75px 8% 17px;
+        background: #f7f7f7;
+
+        @media screen and (min-width: 768px) {
+            padding: 141px 6% 141px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding: 212px 8% 499px;
+        }
+
+        &__ttl {
+            @include sec-ttl;
+            transform: translateY(30px);
+            opacity: 0;
+
+            @media screen and (min-width: 768px) {
+                @include sec-ttl($margin-bottom: 70px, $font-size: 40px);
+            }
+
+            @media screen and (min-width: 1024px) {
+                @include sec-ttl($margin-bottom: 212px, $font-size: 54px);
+            }
+        }
+
+        &__wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translateY(30px);
+            opacity: 0;
+
+            @media screen and (min-width: 1024px) {
+                flex-direction: row;
+                align-items: stretch;
+                gap: 43px;
+            }
+        }
+
+        &__inner {
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 58px;
+
+            @media screen and (min-width: 768px) {
+                width: 57%;
+                max-width: 450px;
+                margin-bottom: 87px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 28%;
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        &__list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 70px;
+            background: $black;
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: .6s;
+
+            @media screen and (min-width: 768px) {
+                height: 97px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                height: 135px;
+                //ホバーしたら背景色がオレンジになる
+                &:hover {
+                    background: linear-gradient(145deg, #EFECEA 3%, #EEE0D3 15%, #FCD9B7 30%, #FDC692 50%, #FAD4B0 70%, #F7DEC4 92%, #F5E1CE 97%, #F3E6D6 100%);
+                    // color: $black;
+                }
+
+                &:hover .skill__txt {
+                    color: $black;
+                }
+                //ホバーしたら＋が黒くなる
+                &:hover .skill__plus::before,
+                &:hover .skill__plus::after {
+                    background: $black;
+                }
+            }
+        }
+
+        &__txt {
+            padding-right: 13px;
+            font-size: 14px;
+            font-family: $font_en;
+            font-weight: 500;
+            transition: .6s;
+
+            @media screen and (min-width: 768px) {
+                padding-right: 16px;
+                font-size: 19px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                padding-right: 42px;
+                font-size: 32px;
+            }
+
+        }
+
+        &__plus {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 11px;
+            height: 11px;
+
+            @media screen and (min-width: 768px) {
+                width: 15px;
+                height: 15px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 27px;
+                height: 27px;
+            }
+
+            &::before,
+            &::after {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: #fff;
+                transition: .6s;
+
+            }
+
+            &::after {
+                transform: rotate(90deg);
+            }
+        }
+
+        &__close {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 70px;
+            background: linear-gradient(145deg, #EFECEA 3%, #EEE0D3 15%, #FCD9B7 30%, #FDC692 50%, #FAD4B0 70%, #F7DEC4 92%, #F5E1CE 97%, #F3E6D6 100%);
+            border-radius: 0 0 20px 20px;
+            cursor: pointer;
+
+            @media screen and (min-width: 768px) {
+              height: 97px;
+            }
+
+            @media screen and (min-width: 1024px) {
+              height: 135px;
+            }
+
+            &::before {
+                content: "";
+            }
+        }
+
+        &__cross {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 9px;
+            height: 9px;
+
+            @media screen and (min-width: 768px) {
+                width: 12px;
+                height: 12px;
+            }
+
+            @media screen and (min-width: 1024px) {
+              width: 18px;
+              height: 18px;
+            }
+
+            &::before,
+            &::after {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                background: $black;
+            }
+
+            &::before {
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                transform: rotate(45deg);
+            }
+        }
+
+        &__txt--02 {
+            padding-left: 8px;
+            font-weight: 500;
+            font-family: $font_en;
+
+            @media screen and (min-width: 768px) {
+                font-size: 14px;
+            }
+
+            @media screen and (min-width: 1024px) {
+              font-size: 18px;
+            }
+        }
+
+        &__detail {
+            position: relative;
+            display: none;
+            width: 100%;
+            padding: 57px 13% 76px;
+            background: #ffffff;
+            border-radius: 0 0 20px 20px;
+
+            @media screen and (min-width: 768px) {
+                width: 100%;
+                padding: 70px 10% 116px;
+            }
+
+            @media screen and (min-width: 1024px) {
+              padding: 100px 16% 184px;
+            }
+        }
+
+        &__title-design,
+        &__title-coding,
+        &__title-others {
+            display: flex;
+            align-items: center;
+            margin-bottom: 23px;
+            font-size: 13px;
+            font-family: $font_en;
+            font-weight: 500;
+
+            @media screen and (min-width: 768px) {
+                margin-bottom: 37px;
+                font-size: 18px;
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: 34px;
+                height: 34px;
+                margin-right: 15px;
+
+                @media screen and (min-width: 768px) {
+                    width: 55px;
+                    height: 55px;
+                }
+            }
+        }
+
+        &__title-design {
+            &:nth-of-type(1)::before {
+                background: url(../images/skillicon-photoshop.svg)center center / cover;
+            }
+
+            &:nth-of-type(2)::before {
+                background: url(../images/skillicon-xd.svg)center center / cover;
+            }
+
+            &:nth-of-type(3)::before {
+                background: url(../images/skillicon-figma.svg)center center / cover;
+            }
+        }
+
+        &__title-coding {
+            &:nth-of-type(1)::before {
+                background: url(../images/skillicon-html.svg)center center / cover;
+            }
+
+            &:nth-of-type(2)::before {
+                background: url(../images/skillicon-css.svg)center center / cover;
+            }
+
+            &:nth-of-type(3)::before {
+                background: url(../images/skillicon-jquery.svg)center center / cover;
+            }
+
+            &:nth-of-type(4)::before {
+                background: url(../images/skillicon-sass.svg)center center / cover;
+            }
+
+            &:nth-of-type(5)::before {
+                background: url(../images/skillicon-vscode.svg)center center / cover;
+            }
+        }
+
+        &__title-others {
+            &:nth-of-type(1)::before {
+                background: url(../images/skillicon-git.svg)center center / cover;
+            }
+
+            &:nth-of-type(2)::before {
+                background: url(../images/skillicon-wordpress.svg)center center / cover;
+            }
+
+            &:nth-of-type(3)::before {
+                width: 26px;
+                height: 26px;
+                margin-right: 25px;
+                margin-left: 3px;
+                background: url(../images/skillicon-quip.svg)center center / cover;
+
+                @media screen and (min-width: 768px) {
+                  width: 41px;
+                  height: 41px;
+                  margin-right: 32px;
+                }
+            }
+
+            &:nth-of-type(4)::before {
+                background: url(../images/skillicon-chatwork.svg)center center / cover;
+            }
+        }
+
+        &__summary {
+            margin-bottom: 51px;
+            line-height: 2;
+
+            @media screen and (min-width: 768px) {
+                font-size: 13px;
+            }
+        }
+    }
+
+    //コンタクトセクション
+    .contact {
+        padding: 72px 8%;
+        background: #fff;
+        border-radius: 20px;
+
+        @media screen and (min-width: 768px) {
+            padding: 141px 6%;
+        }
+
+        @media screen and (min-width: 1024px) {
+            display: flex;
+            justify-content: space-between;
+            padding: 212px 8%;
+            border-radius: 40px;
+        }
+
+        &__wrap {
+            transform: translateY(30px);
+            opacity: 0;
+
+            @media screen and (min-width: 1024px) {
+                width: 27%;
+            }
+        }
+
+        &__ttl {
+            @include sec-ttl;
+
+            @media screen and (min-width: 768px) {
+                @include sec-ttl($margin-bottom: 48px, $font-size: 40px);
+            }
+
+            @media screen and (min-width: 1024px) {
+                @include sec-ttl($margin-bottom: 76px, $font-size: 54px);
+            }
+        }
+
+        &__txt {
+            width: 80%;
+            margin-bottom: 52px;
+            line-height: 2;
+
+            @media screen and (min-width: 768px) {
+                width: 58%;
+                margin-bottom: 48px;
+                font-size: 13px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+
+        &__form {
+            transform: translateY(30px);
+            opacity: 0;
+
+            @media screen and (min-width: 1024px) {
+                width: 67%;
+            }
+        }
+
+        &__form-box {
+            margin-bottom: 29px;
+
+            &:nth-of-type(4) {
+                margin-bottom: 72px;
+
+                @media screen and (min-width: 768px) {
+                    margin-bottom: 141px;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    margin-bottom: 186px;
+                }
+            }
+
+            @media screen and (min-width: 768px) {
+                margin-bottom: 32px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 50px;
+            }
+        }
+
+        //フォームの見出し
+        &__form-label {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 13px;
+
+            @media screen and (min-width: 768px) {
+                font-size: 15px;
+            }
+        }
+
+        &__form-input {
+            width: 100%;
+            height: 57px;
+            padding: 10px;
+            background: #F7F7F7;
+            border: none;
+            color: $black;
+            font-size: 16px;
+
+            //枠の中の文字
+            &::placeholder {
+                color: $gray;
+                font-size: 16px;
+            }
+
+            //クリックしたときの枠線の色など
+            &:focus {
+                color: $black;
+                font-size: 16px;
+                outline: 1px solid $gray;
+            }
+        }
+
+        &__form-message {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            background: #f7f7f7;
+            color: $black;
+            border: none;
+            font-size: 16px;
+
+            &::placeholder {
+                font-size: 16px;
+            }
+
+            &:focus {
+                color: $black;
+                font-size: 16px;
+                outline: 1px solid $gray;
+            }
+        }
+
+        &__form-btn {
+            width: 205px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 100px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: -75%;
+                width: 50%;
+                height: 100%;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+                transform: skewX(-45deg);
+            }
+
+            &:hover::before {
+                animation: shine .8s;
+                transition: 1s;
+                pointer-events: none;
+            }
+
+            @media screen and (min-width: 768px) {
+                width: 230px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 280px;
+            }
+        }
+
+        &__form-submit {
+            width: 205px;
+            padding: 24px 0;
+            background: #000000ce;
+            color: #fff;
+            border-radius: 100px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 1s;
+            appearance: none;
+            -webkit-appearance: none;
+
+            &:hover {
+                background: linear-gradient(145deg, #EFECEA 3%, #EEE0D3 15%, #FCD9B7 30%, #FDC692 50%, #FAD4B0 70%, #F7DEC4 92%, #F5E1CE 97%, #F3E6D6 100%);
+                color: #fff;
+                transition: 1s;
+            }
+
+            @media screen and (min-width: 768px) {
+                width: 230px;
+                padding: 26px 0;
+                font-size: 14px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 280px;
+                padding: 29px 0;
+                font-size: 16px;
+            }
+        }
+    }
+}

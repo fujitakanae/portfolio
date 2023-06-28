@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>WSS</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <script>
+    (function (d) {
+      var config = {
+        kitId: 'fdj3fkk',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="../js/jquery-3.6.3.min.js"></script>
+  <script src="../js/script.js"></script>
+  <link href="../css/style.css" rel="stylesheet" media="all">
+</head>
+
+<body id="question">
+  <div class="wrapper">
+    <!-- ヘッダーとナビゲーション -->
+    <header class="header">
+      <h1 class="header__ttl">
+        <a href="../index.html" class="header__link"><img src="../images/wss_logo_simple.svg" alt="WSSロゴ"
+            class="header__logo"></a>
+      </h1>
+      <nav class="gnav">
+        <ul class="gnav__nav">
+          <li class="gnav__list"><a href="../support/index.html" class="gnav__link">WSSとは</a></li>
+          <li class="gnav__list"><a href="../web/index.html" class="gnav__link">Web制作って何？</a></li>
+          <li class="gnav__list"><a href="../lesson/index.html" class="gnav__link">授業の流れ</a></li>
+          <li class="gnav__list"><a href="../job/index.html" class="gnav__link">就職に関すること</a></li>
+          <li class="gnav__list"><a href="../interview/index.html" class="gnav__link">卒業生インタビュー</a></li>
+          <li class="gnav__list"><a href="../session/index.html" class="gnav__link">説明会について</a></li>
+          <li class="gnav__list"><a href="index.html" class="gnav__link">よくある質問</a></li>
+          <li class="gnav__list"><a href="../access/index.html" class="gnav__link">運営会社</a></li>
+        </ul>
+        <div class="gnav__btn"><a href="https://twitter.com/webstudysapporo" target="_blank"
+            class="gnav__btn--link">最新情報はこちら</a></div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="question">
+
+        <!-- topテキスト -->
+        <div class="question__top">
+          <div class="question__box01">
+            <div class="question__ttl--box show">
+              <h2 class="question__ttl trigger">よくある質問</h2>
+              <h3 class="question__sub trigger">Q&A</h3>
+            </div>
+            <p class="question__txt--01">これまでWSSにお問い合わせ頂いた質問を一覧にしております。<br>
+              授業に対する疑問や環境に関する疑問など、様々なお問い合わせを頂いており、<br>
+              皆様の疑問を弊社にてまとめましたので、是非ご参考下さい。</p>
+          </div>
+          <div class="question__box02">
+            <p class="question__notice">注意事項</p>
+            <p class="question__txt--02">以下に記述されている質問は、私たち職業訓練校によくお問い合わせ頂く内容です。<br>
+              ただ、弊社では判断できかねる内容も多数ございます。<br>
+              その際には、お近くのハローワークへご相談をお願い致します。</p>
+          </div>
+        </div>
+
+        <div class="question__wrap">
+          <!-- 左固定メニュー -->
+          <div class="question__side">
+            <nav class="question__nav">
+              <ul class="question__ul">
+                <li class="question__list"><a href="#category__01" class="question__link">求職者支援訓練に関する質問</a></li>
+                <li class="question__list"><a href="#category__02" class="question__link">学科(訓練コース)に関する質問</a></li>
+                <li class="question__list"><a href="#category__03" class="question__link">就職・転職に関する質問</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- ここから質問 -->
+          <div class="question__right--container">
+
+            <p class="question__category" id="category__01">求職者支援訓練に関する質問</p>
+            <div class="question__inner--box">
+
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">現在在職中ですが、仕事をしながら職業訓練を受講できますか？</dd>
+                <dd class="question__togglebtn">
+                </dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">
+                    雇用保険に加入している場合は受講できないかと思われます。<br>もし、雇用保険に未加入の場合は受講可能な場合もございますので、一度ハローワークへご相談することをお勧めします。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">自分が職業訓練を受講できるか判断できません。</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox answer__box">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">
+                    申し訳ありませんが弊社では判断できかねます。<br>厚生労働省の求職者支援訓練制度に関するページの条件に記載がありますので、ご参考ください。または、お近くのハローワークにてご相談をお願いします。
+                  </dd>
+                </dl>
+                <div class="btn"><a
+                    href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/kyushokusha_shien/"
+                    class="btn__link" target="_blank">厚生労働省｜求職者支援訓練のご案内</a></div>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">受講料は本当に無料ですか？<br>受講料以外で料金が発生する事はありませんか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">
+                    受講料は完全に無料です。<br>ただし、テキスト代として10,274円発生致しますのでご了承ください。加えて、任意で資格試験を受験可能です。その際に料金が発生する場合がございます。</dd>
+                </dl>
+              </div>
+            </div>
+
+            <p class="question__category" id="category__02">学科(訓練コース)に関する質問</p>
+            <div class="question__inner--box">
+
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">ハローワークに置いてあるコース案内（チラシ）を見たのですが、書いてある事がわかりません。</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">募集期間中に説明会を実施しておりますので、よろしければご参加ください。<br>もしくはお電話でもご案内しておりますので、お気軽にご相談ください。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">パソコン初心者でも大丈夫ですか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">
+                    GoogleやYahooなどで検索してインターネットを閲覧する程度の知識があれば受講可能です。<br>過去の受講生の方々も全員同じスタートラインから始めておりますのでご安心ください。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">年齢制限はありますか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">受講に当たって年齢制限はありません。年齢よりも本人の「やる気」や「学ぶ姿勢」が一番重要な点だと思います。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">絵やイラストが描けないけどデザイナーになれますか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">
+                    業務内容にもよると思いますが、基本的に絵やイラストを描くようなお仕事ではございません。<br>簡単に説明すると、ホームページ全体のレイアウトやコンテンツを設計（デザイン）するお仕事なので、絵やイラストは描けなくても大丈夫です。
+                  </dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">パソコンを持っていないとダメですか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">特に必要ありません。<br>授業中はこちらで用意したPCを一人1台ご利用いただけます。<br>※貸出による持ち帰りは不可</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">スマホを持っていないとダメですか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">そんな事はありません。<br>ただ、スマートフォンを所持している方の方が画面の特徴を理解しやすいので、制作が捗るかと思います。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">自分のパソコンで授業を受けてもいいですか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">申し訳ありませんが持ち込み頂いたパソコンで受講できません。<br>こちらで皆さんのパソコンはご用意致しますのでそちらをご利用ください。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">パソコンの種類(ＯＳ)は何ですか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">Windows10を利用しております。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">Macは使いますか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">利用しません。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">自宅のパソコンがMacです。<br>Windowsは操作方法がわからないのですが大丈夫ですか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">大丈夫です。<br>基本的な操作で多少異なる部分はありますが、使用するソフトが全てMacでも利用可能なソフトなので操作方法も同じです。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">授業で使用するパソコンはノートＰＣですか？デスクトップＰＣですか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">15インチのノートパソコンです。<br>ノートパソコンですがSSDを搭載しているので高速に処理ができます。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">使用するソフトは何ですか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">Adobe(アドビ)のPhotoshop
+                    CCやBrackets、GitHubのATOMなど様々なソフトを利用します。<br>詳細を確認したい方は、説明会やお電話などでご案内しておりますので、お気軽にご連絡ください。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">次の職業訓練の募集はいつですか？毎月募集していますか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">
+                    毎月の開講ではございません。<br>お手数ですが、お電話やメールにてご相談いただけると幸いです。<br>また、Twitterで周知を行いますので、よろしければご確認ください。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">次回の職業訓練コースも同じ授業内容ですか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">基本的には同じ授業内容です。<br>ただ、時代に合わせて変更しておりますので、必ず同じ内容とは限りません。</dd>
+                </dl>
+              </div>
+            </div>
+
+            <p class="question__category" id="category__03">就職・転職に関する質問</p>
+            <div class="question__inner--box">
+
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">パソコンを使用した仕事自体未経験です。それでもWeb関係の仕事に就職できますか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">必ずではございませんが、全く同じ条件で就職した方が多くおりますのでご安心ください。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">Webなどのパソコンの仕事は１日中パソコンを操作しているだけで、他の人と話さなくてもいいんですか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">業務内容によっては、クライアントやチーム内の打ち合わせ等コミュニケーションが必要な場面もございます。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">職業訓練(求職者支援訓練)を受講すると必ず就職できますか？</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">
+                    就職は「必ず」ではございません。<br>WSSでは受講生の方々が就職できるように技術支援や就職支援、企業紹介などを行いますが、受講生の方全員が必ず就職できているわけではございません。</dd>
+                </dl>
+              </div>
+              <dl class="question__questionbox">
+                <dt class="question__dt">Question</dt>
+                <dd class="question__q">就職率を教えてください。</dd>
+                <dd class="question__togglebtn"></dd>
+              </dl>
+              <div class="question__answer--wrap">
+                <dl class="question__answerbox">
+                  <dt class="question__dt">Answer</dt>
+                  <dd class="question__a">
+                    2016年度の就職率が高い教室だと100%です。<br>ただ、全ての教室がその就職率ではございません。全て同じ授業内容で受講しても、本人の「やる気」や「学ぶ姿勢」で就職率は変わってくるものだと思います。
+                  </dd>
+                </dl>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="foooter__container--01">
+        <p class="footer__ttl"><a href="../index.html" class="footer__link"><img src="../images/wss_logo_white.svg"
+              alt="wssロゴ" class="footer__logo"></a></p>
+        <p class="footer__txt--01">北海道札幌市中央区北五条西6丁目1番<br>第二北海道通信ビル5階 503号</p>
+        <p class="footer__txt--02"><a
+            href="https://www.google.com/maps/place/%E3%83%A8%E3%83%89%E3%83%90%E3%82%B7%E3%82%AB%E3%83%A1%E3%83%A9+%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E6%9C%AD%E5%B9%8C/@43.066978,141.346765,15z/data=!4m5!3m4!1s0x0:0x880a535ecd320215!8m2!3d43.0683875!4d141.3477201?hl=ja"
+            target="_blank" class="footer__link">Google map</a></p>
+        <p class="footer__copy"><small class="footer__small">&copy;NEXTONE SAPPORO.Inc</small></p>
+      </div>
+      <div class="footer__container--02">
+        <ul class="footer__ul">
+          <li class="footer__list"><a href="../support/index.html" class="footer__link">WSSとは</a></li>
+          <li class="footer__list"><a href="../web/index.html" class="footer__link">Web制作って何？</a></li>
+          <li class="footer__list"><a href="../lesson/index.html" class="footer__link">授業の流れ</a></li>
+          <li class="footer__list"><a href="../job/index.html" class="footer__link">就職に関すること</a></li>
+          <li class="footer__list"><a href="../interview/index.html" class="footer__link">卒業生インタビュー</a></li>
+          <li class="footer__list"><a href="../session/index.html" class="footer__link">説明会について</a></li>
+          <li class="footer__list"><a href="index.html" class="footer__link">よくある質問</a></li>
+          <li class="footer__list"><a href="../access/index.html" class="footer__link">運営会社</a></li>
+        </ul>
+        <p class="footer__txt--03"><a href="https://next1sapporo.net/privacy.html" target="_blank"
+            class="footer__link">プライバシーポリシー</a></p>
+      </div>
+    </footer>
+
+  </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+@use "../global" as *;
+
+#thanks {
+
+    .wrapper {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .thanks {
+        &__txt {
+            margin-bottom: 50px;
+            font-size: 22px;
+            text-align: center;
+
+            @media screen and (min-width: 768px) {
+              font-size: 25px;
+            }
+
+            @media screen and (min-width: 1024px) {
+              margin-bottom: 100px;
+              font-size: 30px;
+
+              br {
+                display: none;
+              }
+            }
+        }
+
+        // &__link {
+        //     color: #000;
+        //     text-decoration: none;
+        // }
+
+    }
+}

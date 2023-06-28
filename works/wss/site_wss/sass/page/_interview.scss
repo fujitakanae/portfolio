@@ -1,0 +1,284 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#interview {
+
+    font-family: $font_jp;
+
+    .interview {
+        padding-top: 312px;
+
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 385px;
+        }
+
+        &__box:nth-of-type(1) {
+            margin-left: 260px;
+        }
+
+
+        &__ttl {
+            margin-bottom: 18px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+            // opacity: 0;
+        }
+
+        &__sub {
+            margin-bottom: 103px;
+            color: $acc;
+            font-size: 80px;
+            font-weight: 600;
+            font-family: $font_en;
+            // opacity: 0;
+        }
+
+        &__heading {
+            margin-bottom: 40px;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+            line-height: 1.6;
+        }
+
+        &__txt {
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+            line-height: 2;
+        }
+
+        &__pic {
+            width: 800px;
+            height: 583px;
+            margin-right: 65px;
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+    .introduction {
+        &__pic {
+            flex-shrink: 0;
+            width: 610px;
+            height: 583px;
+            margin-left: 41px;
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__container--01 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 105px;
+        }
+
+        &__container--02 {
+            position: relative;
+            left: -41px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            // align-items: center;
+            width: 807px;
+            height: 404px;
+            padding-left: 166px;
+            background: #F4EDED;
+        }
+
+        &__container--01:nth-of-type(3) .introduction__container--02 {
+            left: 82px;
+        }
+
+        &__container--03 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+
+        &__ttl {
+            position: relative;
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+            margin-bottom: 72px;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+        }
+
+        &__ttl::before {
+            position: absolute;
+            left: -45px;
+            content: "";
+            display: block;
+            width: 10px;
+            height: 126px;
+            // margin-right: 40px;
+            background: $acc;
+        }
+
+
+        &__box {
+            display: flex;
+        }
+
+        &__box:nth-of-type(1) {
+            margin-bottom: 25px;
+        }
+
+        &__name {
+            width: 85px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+        }
+
+        &__date {
+            padding-left: 45px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+        }
+
+        &__profession {
+            width: 85px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+        }
+
+        &__work {
+            padding-left: 45px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+        }
+
+        &__dl {
+            width: 950px;
+            margin: 0 auto 105px;
+        }
+
+        &__sub {
+            position: relative;
+            display: flex;
+            // justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #E79CAD;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+        }
+
+        &__sub::before {
+            position: absolute;
+            left: -12px;
+            content: "";
+            display: block;
+            width: 4px;
+            height: 19px;
+            // margin-right: 12px;
+            background: #E79CAD;
+        }
+
+        &__txt {
+            margin-bottom: 48px;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.05rem;
+            line-height: 2;
+        }
+
+        
+        
+    }
+
+
+    //--------------------------------
+    
+    .animebox {
+        width: 380px;
+        height: 110px;
+        margin-bottom: 106px;
+    }
+    
+    .square__anime {
+        position: relative;
+        overflow: hidden;
+    
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: $acc;
+            animation: square__anime 1.5s ease-in-out both;
+        }
+    }
+    
+    
+    @keyframes square__anime {
+    
+        0% {
+            transform: translateX(-100%);
+        }
+    
+        30% {
+            transform: translateX(0%);
+        }
+    
+        50% {
+            transform: translateX(0%);
+        }
+    
+        100% {
+            transform: translateX(100%);
+        }
+    
+    }
+    
+    .appear {
+        opacity: 0;
+        animation: appear 1.5s ease-in-out 0.5s forwards;
+    }
+    
+    @keyframes appear {
+        0% {
+            opacity: 0;
+        }
+    
+        50% {
+            opacity: 1;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
+}

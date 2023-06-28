@@ -1,0 +1,253 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#session {
+    font-family: $font_jp;
+    font-weight: 700;
+
+    .session {
+        padding-top: 323px;
+
+        &__container--01 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 0 177px 320px;
+        }
+
+        &__wrap {
+            width: 570px;
+        }
+
+        &__ttl {  //日本語タイトル
+            margin-bottom: 10px;
+            opacity: 0;
+        }
+
+        &__sub--01 {  //英字タイトル
+            margin-bottom: 85px;
+            color: $acc;
+            font-size: 80px;
+            font-family: $font_en;
+            font-weight: 600;
+            opacity: 0;
+        }
+
+        &__sub--02 {
+            margin-bottom: 30px;
+            font-size: 32px;
+            line-height: 1.6;
+        }
+
+        &__txt--01 {
+            margin-bottom: 30px;
+            line-height: 2;
+        }
+
+        &__pic {
+            width: 795px;
+            height: 587px;
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        //お申込みフォームエリア
+
+        &__container--02 {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 200px 0;
+            background: $base;
+
+            &::before {
+                content: "Application form";
+                position: absolute;
+                top: 150px;
+                display: block;
+                color: #fff;
+                font-family: $font_en;
+                font-size: 150px;
+                z-index: 1;
+            }
+        }
+
+        &__cap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 83px;
+            font-size: 32px;
+            letter-spacing: 0.16rem;
+            z-index: 2;
+
+            &::before {
+                content: "";
+                position: relative;
+                top: 0;
+                left: -30px;
+                display: inline-block;
+                width: 10px;
+                height: 51px;
+                background: $acc;
+            }
+        }
+
+        &__box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 1100px;
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        &__txt--02 {
+            margin-bottom: 100px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        //フォーム本体
+
+        &__table {
+            width: 850px;
+            margin-bottom: 40px;
+            border-collapse: separate;
+            border-spacing: 0 60px;
+        }
+
+        & th {
+            width: 300px;
+            text-align: left;
+            vertical-align: middle;
+            &::before {
+                content: "※必須";
+                display: block;
+                margin-bottom: 5px;
+                color: $acc;
+                font-size: 12px;
+            }
+        }
+
+        & tr:last-child th {
+            vertical-align: text-top;
+            &::before {
+                content: none;
+            }
+        }
+
+        & td {
+            width: 548px;
+        }
+        
+        & input,textarea {
+            display: block;
+            padding: 22px 20px;
+            width: 100%;
+            height: 100%;
+            font-size: 18px;
+            border: 1px solid #CACACA;
+            box-sizing: border-box;
+            &:focus {
+                outline: 0;
+                border: 1px solid $acc;
+            }
+        }
+        
+        &__btn {
+            width: 209px;
+            height: 60px;
+            margin: 0 auto;
+            border: 1px solid $acc;
+            border-radius: 50px;
+            overflow: hidden;
+            text-align: center;
+            & input {
+                padding: 10px 0;
+                background: #fff;
+                color: $acc;
+                font-size: 16px;
+                letter-spacing: 1rem;
+                &:hover {
+                    background: $acc;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        //------------------------------------
+
+        .animebox {
+            width: 310px;
+            height: 106px;
+            margin-bottom: 85px;
+        }
+
+
+        .square__anime {
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: $acc;
+                animation: square__anime 1.5s ease-in-out both;
+            }
+        }
+
+
+        @keyframes square__anime {
+
+            0% {
+                transform: translateX(-100%);
+            }
+
+            30% {
+                transform: translateX(0%);
+            }
+
+            50% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+
+        }
+
+        .appear {
+            opacity: 0;
+            animation: appear 1.5s ease-in-out 0.5s forwards;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+}

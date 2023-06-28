@@ -1,0 +1,27 @@
+// settingフォルダの変数を読み込みます
+
+@use "../setting" as *;
+
+@keyframes slideTextLeft {
+    from {
+      transform: translateX(-100%); /*要素を左の枠外に移動*/
+          opacity: 0;
+    }
+  
+    to {
+      transform: translateX(0);/*要素を元の位置に移動*/
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideTextRight {
+    from {
+      transform: translateX(100%);/*要素を右の枠外に移動*/
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateX(0);/*要素を元の位置に移動*/
+      opacity: 1;
+    }
+  }

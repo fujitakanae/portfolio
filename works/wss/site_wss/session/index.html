@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>WSS</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <script>
+    (function (d) {
+      var config = {
+        kitId: 'fdj3fkk',
+        scriptTimeout: 3000,
+        async: true
+      },
+        h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+    })(document);
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="../js/jquery-3.6.3.min.js"></script>
+  <script src="../js/script.js"></script>
+  <link href="../css/style.css" rel="stylesheet" media="all">
+</head>
+
+<body id="session">
+  <div class="wrapper">
+    <!-- ヘッダーとナビゲーション -->
+    <header class="header">
+      <h1 class="header__ttl">
+        <a href="../index.html" class="header__link"><img src="../images/wss_logo_simple.svg" alt="WSSロゴ"
+            class="header__logo"></a>
+      </h1>
+      <nav class="gnav">
+        <ul class="gnav__nav">
+          <li class="gnav__list"><a href="../support/index.html" class="gnav__link">WSSとは</a></li>
+          <li class="gnav__list"><a href="../web/index.html" class="gnav__link">Web制作って何？</a></li>
+          <li class="gnav__list"><a href="../lesson/index.html" class="gnav__link">授業の流れ</a></li>
+          <li class="gnav__list"><a href="../job/index.html" class="gnav__link">就職に関すること</a></li>
+          <li class="gnav__list"><a href="../interview/index.html" class="gnav__link">卒業生インタビュー</a></li>
+          <li class="gnav__list"><a href="index.html" class="gnav__link">説明会について</a></li>
+          <li class="gnav__list"><a href="../question/index.html" class="gnav__link">よくある質問</a></li>
+          <li class="gnav__list"><a href="../access/index.html" class="gnav__link">運営会社</a></li>
+        </ul>
+        <div class="gnav__btn"><a href="https://twitter.com/webstudysapporo" target="_blank"
+            class="gnav__btn--link">最新情報はこちら</a></div>
+      </nav>
+    </header>
+    <main class="main">
+
+      <!-- 説明会について -->
+      <section class="session">
+        <div class="session__container--01">
+          <div class="session__wrap">
+            <div class="animebox show">
+              <h2 class="session__ttl trigger">説明会について</h2>
+              <p class="session__sub--01 trigger">Session</p>
+            </div>
+            <p class="session__sub--02">説明会でのみ、お見せしているものや
+              資料などがございます</p>
+            <p class="session__txt--01">説明会実施日：<br>訓練募集期間中（令和5年10月5日～令和5年11月１日）<br>毎週火曜・木曜の13：30から開始</p>
+            <p class="session__txt--01">説明会では、授業内容の細かい予定についての資料をお渡しております。<br>
+              その他、修了生の作品をご覧いただけたり、学校のことについてはもちろん、<br>web業界についてもご質問をお受けするお時間を設けております。<br>
+              説明会にお越しいただくことで、より具体的にコース内容・web業界について<br>ご理解いただけると思いますので、ぜひご参加ください。
+            </p>
+          </div>
+          <p class="session__pic"><img src="images/session_img.jpg" alt="説明している女性" class="session__img"></p>
+        </div>
+        <div class="session__container--02">
+          <h3 class="session__cap">説明会お申込みフォーム</h3>
+          <div class="session__box">
+            <p class="session__txt--02">以下のフォームに必要事項をご記入の上、送信ボタンをクリックしてください。<br>
+              内容を確認した後、担当者よりお返事いたします。</p>
+            <form action="#" id="entryform" method="post">
+              <table class="session__table">
+                <tbody class="session__tbody">
+                  <tr class="session__tr">
+                    <th class="session__th">
+                      <p class="session__item">お名前</p>
+                    </th>
+                    <td><input type="text" name="name" required></td>
+                  </tr>
+                  <tr class="session__tr">
+                    <th class="session__th">
+                      <p class="session__item">ふりがな</p>
+                    </th>
+                    <td><input type="text" name="ruby" required></td>
+                  </tr>
+                  <tr class="session__tr">
+                    <th class="session__th">
+                      <p class="session__item">メールアドレス</p>
+                    </th>
+                    <td><input type="email" name="email" required></td>
+                  </tr>
+                  <tr class="session__tr">
+                    <th class="session__th">
+                      <p class="session__item">電話番号</p>
+                    </th>
+                    <td><input type="tel" name="tel" required></td>
+                  </tr>
+                  <tr class="session__tr">
+                    <th class="session__th">
+                      <p class="session__item">希望日程</p>
+                    </th>
+                    <td><input type="text" name="date" required></td>
+                  </tr>
+                  <tr class="session__tr">
+                    <th class="session__th">
+                      <p class="session__item">備考</p>
+                    </th>
+                    <td><textarea name="comment" id="" cols="50" rows="5"></textarea></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="session__btn">
+                <input type="submit" value="送信" class="session__submit" style="border: none;">
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <footer class="footer">
+      <div class="foooter__container--01">
+        <p class="footer__ttl"><a href="../index.html" class="footer__link"><img src="../images/wss_logo_white.svg"
+              alt="wssロゴ" class="footer__logo"></a></p>
+        <p class="footer__txt--01">北海道札幌市中央区北五条西6丁目1番<br>第二北海道通信ビル5階 503号</p>
+        <p class="footer__txt--02"><a
+            href="https://www.google.com/maps/place/%E3%83%A8%E3%83%89%E3%83%90%E3%82%B7%E3%82%AB%E3%83%A1%E3%83%A9+%E3%83%9E%E3%83%AB%E3%83%81%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E6%9C%AD%E5%B9%8C/@43.066978,141.346765,15z/data=!4m5!3m4!1s0x0:0x880a535ecd320215!8m2!3d43.0683875!4d141.3477201?hl=ja"
+            target="_blank" class="footer__link">Google map</a></p>
+        <p class="footer__copy"><small class="footer__small">&copy;NEXTONE SAPPORO.Inc</small></p>
+      </div>
+      <div class="footer__container--02">
+        <ul class="footer__ul">
+          <li class="footer__list"><a href="../support/index.html" class="footer__link">WSSとは</a></li>
+          <li class="footer__list"><a href="../web/index.html" class="footer__link">Web制作って何？</a></li>
+          <li class="footer__list"><a href="../lesson/index.html" class="footer__link">授業の流れ</a></li>
+          <li class="footer__list"><a href="../job/index.html" class="footer__link">就職に関すること</a></li>
+          <li class="footer__list"><a href="../interview/index.html" class="footer__link">卒業生インタビュー</a></li>
+          <li class="footer__list"><a href="index.html" class="footer__link">説明会について</a></li>
+          <li class="footer__list"><a href="../question/index.html" class="footer__link">よくある質問</a></li>
+          <li class="footer__list"><a href="../access/index.html" class="footer__link">運営会社</a></li>
+        </ul>
+        <p class="footer__txt--03"><a href="https://next1sapporo.net/privacy.html" target="_blank"
+            class="footer__link">プライバシーポリシー</a></p>
+      </div>
+    </footer>
+
+  </div>
+
+
+
+
+</body>
+
+</html>

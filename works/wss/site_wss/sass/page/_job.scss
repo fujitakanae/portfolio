@@ -1,0 +1,386 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#job {
+    font-family: $font_jp;
+    font-weight: 700;
+
+    .job {
+        padding-top: 323px;
+
+        &__container--01 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 0 200px 160px;
+        }
+
+        &__wrap {
+            width: 700px;
+        }
+
+        &__ttl { //日本語タイトル
+            margin-bottom: 10px;
+            opacity: 0;
+        }
+
+        &__sub--01 { //英字タイトル
+            margin-bottom: 85px;
+            color: $acc;
+            font-size: 80px;
+            font-family: $font_en;
+            font-weight: 600;
+            opacity: 0;
+        }
+
+        &__sub--02 {
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        &__txt--01 {
+            letter-spacing: 0.2rem;
+            line-height: 1.6;
+        }
+
+        &__pic {
+            width: 958px;
+            height: 598px;
+        }
+
+        &__img {  //グラフ画像と共通
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        // グラフ設定
+
+        &__container--02 {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 110px 175px 297px;
+        }
+
+        &__box--01 {
+            width: 600px;
+        }
+
+        &__cap--01 {
+            display: flex;
+            align-items: center;
+            width: 350px;
+            margin: 0 auto;
+            margin-bottom: 60px;
+            font-size: 32px;
+            text-align: center;
+
+            &::before {
+                content: "";
+                position: relative;
+                top: 0;
+                left: -30px;
+                display: inline-block;
+                width: 10px;
+                height: 51px;
+                background: $acc;
+            }
+        } 
+
+        &__graph--01 {
+            position: relative;
+            margin: 0 auto;
+            width: 532px;
+
+            &::before { //グラフ下背景色
+                content: "";
+                position: absolute;
+                top: 55px;
+                left: 80px;
+                display: block;
+                width: 400px;
+                height: 400px;
+                background: $base;
+                border-radius: 50%;
+                z-index: -1;
+            }
+
+            &::after {
+                content: "※終了後、半年以内\A※2021年度のデータ";
+                white-space: pre;
+                display: block;
+                font-size: 14px;
+                line-height: 2;
+                text-align: right;
+            }
+        }
+
+        &__box--02 {
+            width: 750px;
+        }
+
+
+        &__graph--02 {
+            position: relative;
+            margin-left: 77px;
+            width: 718px;
+
+            &::before {  //グラフ下背景色
+                content: "";
+                position: absolute;
+                top: 55px;
+                left: 60px;
+                display: block;
+                width: 400px;
+                height: 400px;
+                background: $base;
+                border-radius: 50%;
+                z-index: -1;
+            }
+
+            &::after {
+                content: "※2021年度のデータ";
+                display: block;
+                width: 600px;
+                font-size: 14px;
+                text-align: right;
+            }
+        }
+
+        // 就職実績エリア
+
+        &__enterprise {
+            position: relative;
+            padding: 150px 0 220px;
+            background: $base;
+
+            &::before {
+                content: "Employment";
+                position: absolute;
+                top: 58px;
+                left: 68px;
+                display: block;
+                color: #fff;
+                font-family: $font_en;
+                font-size: 150px;
+                z-index: 1;
+            }
+        }
+
+        &__cap--02 {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin: 0 0 30px 360px;
+            font-size: 32px;
+            z-index: 2;
+
+            &::before {
+                content: "";
+                position: relative;
+                top: 0;
+                left: -42px;
+                display: inline-block;
+                width: 10px;
+                height: 51px;
+                background: $acc;
+            }
+
+        }
+
+        &__txt--02 {
+            margin: 0 0 146px 320px;
+            font-size: 16px;
+            letter-spacing: 0.2rem;
+            line-height: 1.6;
+        }
+
+        // 企業リンクボタン
+        &__ul {
+            display: flex;
+            flex-wrap: wrap;
+            width: 1280px;
+            margin: 0 auto;
+            column-gap: 240px;
+            row-gap: 70px;
+        }
+
+        & li {
+            width: 520px;
+            height: 230px;
+            background: #fff;
+            font-size: 16px;
+            list-style-type: none;
+        }
+
+        & a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            color: #000;
+            text-decoration: none;
+            &:hover {
+                background: $acc;
+            }
+        }
+
+        & li:nth-of-type(1) a::before {
+            content: "";
+            display: block;
+            width: 250px;
+            height: 80px;
+            margin: 69px 0 19px 0;
+            background: url(../job/images/job_logo01.svg) center center / cover;
+        }
+
+        & li:nth-of-type(2) a::before {
+            content: "";
+            display: block;
+            width: 272px;
+            height: 133px;
+            margin-top: 35px;
+            background: url(../job/images/job_logo02.svg) center center / cover;
+        }
+        & li:nth-of-type(3) a::before {
+            content: "";
+            display: block;
+            width: 134px;
+            height: 144px;
+            margin: 22px 0 11px 0;
+            background: url(../job/images/job_logo03.svg) center center / cover;
+        }
+        & li:nth-of-type(4) a::before {
+            content: "";
+            display: block;
+            width: 491px;
+            height: 48px;
+            margin: 98px 0 30px 0;
+            background: url(../job/images/job_logo04.svg) center center / cover;
+        }
+        & li:nth-of-type(5) a::before {
+            content: "";
+            display: block;
+            width: 419px;
+            height: 45px;
+            margin: 90px 0 45px 0;
+            background: url(../job/images/job_logo05.svg) center center / cover;
+        }
+        & li:nth-of-type(6) a::before {
+            content: "";
+            display: block;
+            width: 292px;
+            height: 155px;
+            margin-top: 25px;
+            background: url(../job/images/job_logo06.svg) center center / cover;
+        }
+        & li:nth-of-type(7) a::before {
+            content: "";
+            display: block;
+            width: 360px;
+            height: 84px;
+            margin: 70px 0 25px 0;
+            background: url(../job/images/job_logo07.svg) center center / cover;
+        }
+        & li:nth-of-type(8) a::before {
+            content: "";
+            display: block;
+            width: 221px;
+            height: 108px;
+            margin: 45px 0 30px 0;
+            background: url(../job/images/job_logo08.svg) center center / cover;
+        }
+        & li:nth-of-type(9) a::before {
+            content: "";
+            display: block;
+            width: 118px;
+            height: 117px;
+            margin: 35px 0 25px 0;
+            background: url(../job/images/job_logo09.svg) center center / cover;
+        }
+        & li:nth-of-type(10) a::before {
+            content: "";
+            display: block;
+            width: 405px;
+            height: 57px;
+            margin: 90px 0 30px 0;
+            background: url(../job/images/job_logo10.svg) center center / cover;
+        }
+
+        &__link--01::before {
+            content: "";
+            display: block;
+            width: 310px;
+            height: 93px;
+            background: url(../job/images/job_logo01.svg) center center / cover;
+        }
+
+        //--------------------------------
+
+        .animebox {
+            width: 523px;
+            height: 110px;
+            margin-bottom: 80px;
+        }
+
+        .square__anime {
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: $acc;
+                animation: square__anime 1.5s ease-in-out both;
+            }
+        }
+
+
+        @keyframes square__anime {
+
+            0% {
+                transform: translateX(-100%);
+            }
+
+            30% {
+                transform: translateX(0%);
+            }
+
+            50% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+
+        }
+
+        .appear {
+            opacity: 0;
+            animation: appear 1.5s ease-in-out 0.5s forwards;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+}

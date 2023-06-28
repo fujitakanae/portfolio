@@ -1,0 +1,70 @@
+@use "../global" as *;
+
+body {
+    color: $black;
+    font-size: 12px;
+    font-family: $font_jp;
+    font-weight: 400;
+    background: #f7f7f7;
+}
+
+.all__btn {
+    width: 205px;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+        width: 230px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        width: 280px;
+    }
+
+}
+
+.all__link {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    padding: 24px 0;
+    background: #000000ce;
+    color: #fff;
+    border-radius: 100px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    transition: 1s;
+
+    
+    @media screen and (min-width: 768px) {
+        padding: 26px 0;
+        font-size: 14px;
+    }
+    
+    @media screen and (min-width: 1024px) {
+        padding: 29px 0;
+        font-size: 16px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -75%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+        transform: skewX(-45deg);
+    }
+    
+    //ホバーしたらグラデーションにする
+    &:hover {
+        background: linear-gradient(145deg, #EFECEA 3%, #EEE0D3 15%, #FCD9B7 30%, #FDC692 50%, #FAD4B0 70%, #F7DEC4 92%, #F5E1CE 97%, #F3E6D6 100%);
+        color: $black;
+        transition: 1s;
+
+        &::before {
+            animation: shine .8s;
+        }
+    }
+}

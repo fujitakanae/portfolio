@@ -1,0 +1,502 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#top {
+
+    .mv {
+        height: 100vh;
+        margin-bottom: 255px;
+        background: url(../images/mv.jpg)center center / cover;
+    }
+
+    .all__btn {
+        width: 150px;
+        position: relative;
+    }
+
+    .all__link {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 12px 0;
+        color: $acc;
+        font-size: 19px;
+        font-family: $font_en;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-align: center;
+        text-decoration: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: $acc;
+            transition: all .3s;
+            transform: scaleX(0);
+        }
+        &:hover::before {
+            width: 100%;
+            transform: scaleX(1);
+            
+        }
+
+        &::after {
+            content: '→';
+            display: block;
+            font-size: 19px;
+        } 
+    }
+
+    .reserve__btn {
+        width: 241px;
+    }
+    
+    .reserve__link {
+        display: block;
+        padding: 22px 0;
+        background: $acc;
+        border-radius: 34px;
+        color: #fff;
+        font-size: 14px;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        text-align: center;
+        transition: .4s;
+        
+        &:hover {
+            background: #282894;
+        }
+    }
+
+    @keyframes slide {
+        to {
+            transform: translateX(0);
+        }
+
+        from {
+            transform: translateX(-100%);
+        }
+    }
+
+    // welcome
+    .welcome {
+
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1600px;
+        margin: 0 auto;
+        margin-bottom: 255px;
+
+        &::after {
+            position: absolute;
+            z-index: -1;
+            top: -94px;
+            left: -160px;
+            content: '';
+            display: block;
+            width: 1601px;
+            height: 822px;
+            background: #D0F0FC;
+        }
+
+        &__ttl {
+            @include sec-ttl;
+        }
+
+        &__txt--01 {
+            @include sec-txt;
+        }
+
+        &__txt--02 {
+            @include sec-txt;
+        }
+
+        &__txt--03 {
+            @include sec-txt(0);
+        }
+
+        &__pic {
+            width: 927px;
+            height: 634px;
+        }
+
+        &__img {
+            @include img;
+        }
+    }
+
+    //about
+    .about {
+
+        display: flex;
+        justify-content: center;
+        gap: 146px;
+        margin-bottom: 160px;
+
+        &__pic {
+            width: 800px;
+            height: 818px;
+            background-position: 200px 200px;
+        }
+
+        &__img {
+            @include img;
+        }
+
+        &__ttl {
+            @include sec-ttl;
+        }
+
+        &__txt--01,
+        &__txt--02 {
+            @include sec-txt;
+        }
+
+        &__txt--03 {
+            @include sec-txt(72px);
+        }
+
+        &__btn {
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        &__link {
+            display: block;
+            padding: 17px 0;
+            background: $acc;
+            border-radius: 23px;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 0.25em;
+            text-decoration: none;
+            text-align: center;
+            transition: .4s;
+
+            &:hover {
+                background: #282894;
+            }
+        }
+    }
+
+    // menu
+    .menu {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 160px;
+
+        &__ttl {
+            @include sec-ttl;
+        }
+
+        &__box {
+            display: flex;
+            margin-bottom: 80px;
+        }
+
+        &__pic {
+            width: 533px;
+            height: 533px;
+        }
+
+        &__img {
+            @include img;
+        }
+    }
+
+    .salon {
+        position: relative;
+        margin-bottom: 160px;
+
+        &__bg {
+            background: url(../images/salon.jpeg)center center /cover;
+            width: 100%;
+            height: 789px;
+        }
+
+        &__box {
+            position: absolute;
+            top: 115px;
+            right: 115px;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 827px;
+        }
+
+        &__ttl {
+            @include sec-ttl(60px);
+        }
+
+        &__txt {
+            @include sec-txt(52px)
+        }
+    }
+
+    .location {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 139px;
+        margin-bottom: 160px;
+
+        &__box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__ttl {
+            @include sec-ttl;
+
+            &::after {
+                content: 'Studio by EDEN the garden';
+                display: block;
+                padding-top: 13px;
+                font-size: 19px;
+                font-weight: 500;
+                font-family: $font_en;
+                letter-spacing: 0.13em;
+            }
+        }
+
+        &__txt--01 {
+            @include sec-txt;
+        }
+
+        &__txt--02 {
+            @include sec-txt(100px);
+        }
+
+        &__pic {
+            width: 800px;
+            height: 800px;
+        }
+
+        &__img {
+            @include img;
+        }
+    }
+
+    //instagram
+    .insta {
+        margin-bottom: 160px;
+
+        &__ttl {
+            @include sec-ttl;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+
+            &::after {
+                content: url(../images/instagram.png);
+                display: block;
+                width: 40px;
+                margin-left: 35px;
+            }
+        }
+
+        &__slide {
+            display: flex;
+            overflow: hidden;
+        }
+
+        &__slide--wrap {
+            display: flex;
+            animation: slide 50s linear infinite;
+        }
+
+        &__slide--list {
+            width: 384px;
+            height: 384px;
+            list-style-type: none;
+        }
+
+        &__slide--img {
+            @include img;
+        }
+    }
+
+    //news 
+    .news {
+        margin-bottom: 160px;
+        padding: 0 320px;
+
+        &__ttl {
+            @include sec-ttl;
+            text-align-last: left;
+        }
+
+        &__btn {
+            margin-bottom: 44px;
+            margin-left: auto;
+            text-align: left;
+        }
+
+        &__dl {
+            width: 1280px;
+            margin: 0 auto;
+            padding: 37px 0;
+            border-bottom: 1px solid #000;
+            border-top: 1px solid #000;
+        }
+
+        &__dt {
+            margin-bottom: 30px;
+            padding-left: 43px;
+            font-size: 15px;
+            letter-spacing: 0.13em;
+        }
+
+        &__dd {
+            padding-left: 43px;
+            font-size: 14px;
+            letter-spacing: 0.13em;
+        }
+
+        &__link {
+            padding: 10px 0;
+            color: #000;
+            text-decoration: none;
+
+        }
+    }
+
+    //access
+    .access {
+        margin-bottom: 160px;
+
+        &__ttl {
+            @include sec-ttl;
+        }
+
+        &__container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 144px;
+        }
+
+        &__shop {
+            margin-bottom: 30px;
+            font-size: 30px;
+            font-weight: 700;
+            font-family: $font_en;
+            letter-spacing: 0.13em;
+        }
+
+        &__address {
+            letter-spacing: 0.13em;
+            margin-bottom: 61px;
+            letter-spacing: 0.13em;
+            line-height: 1.9;
+        }
+
+        &__traffic {
+            margin-bottom: 37px;
+            letter-spacing: 0.13em;
+            line-height: 1.9;
+        }
+
+        &__parking {
+            margin-bottom: 37px;
+            letter-spacing: 0.13em;
+            line-height: 1.9;
+        }
+
+        &__txt--01 {
+            margin-bottom: 37px;
+            letter-spacing: 0.13em;
+            line-height: 1.9;
+        }
+
+        &__txt--02 {
+            letter-spacing: 0.13em;
+            line-height: 1.9;
+        }
+    }
+
+    // sns
+    .sns {
+
+        position: relative;
+        margin-bottom: 160px;
+
+        &::after {
+            position: absolute;
+            top: 258px;
+            left: 898px;
+            content: 'INSTAGRAM';
+            display: block;
+            font-size: 18px;
+            font-family: $font_en;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+        }
+
+        &__link {
+            display: block;
+        }
+
+        &__bg {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 454px;
+            background: #D0F0FC;
+        }
+
+        &__pic {
+            width: 1520px;
+            height: 304px;
+        }
+
+        &__img {
+            @include img;
+        }
+
+        &__txt {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000;
+            font-size: 33px;
+            font-family: $font_en;
+            font-weight: 600;
+            letter-spacing: 0.31em;
+
+            &::after {
+                position: relative;
+                content: '';
+                display: block;
+                top: 2px;
+                background: url(../images/sns_instagram.png);
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+
+
+
+}

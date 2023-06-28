@@ -1,0 +1,106 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.gnav {
+
+    font-family: $sans;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+    &__nav {
+        display: flex;
+    }
+
+    &__list {
+        margin-right: 25px;
+    }
+
+    &__link {
+        display: block;
+        padding: 15px 20px;
+        color: $gray;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: $sen;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+    }
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 100vh;
+    background: #7EC28D;
+    transform: translateX(-100%);
+    transition: .4s;
+    text-align: center;
+
+    &__list {
+        margin-bottom: 27px;
+    }
+
+    &__link {
+        display: block;
+        padding: 15px 15px;
+        color: $gray;
+        font-size: 18px;
+        font-family: $sen;
+        font-family: 700px;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+    }
+
+    &__child-link {
+        display: block;
+        padding: 10px;
+        color: $gray;
+        font-size: 12px;
+        text-decoration: none;
+    }
+}
+
+.fnav {
+    margin-bottom: 36px;
+    
+    &__nav {
+        display: flex;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        &::after {
+            content: "";
+            display: block;
+            height: 13px;
+            width: 2px;
+            background: $gray;
+        }
+
+        &:nth-of-type(5)::after {
+            content: none;
+        }
+    }
+
+    &__link {
+        display: block;
+        padding: 15px 47px;
+        color: $gray;
+        font-size: 14px;
+        font-family: $sen;
+        letter-spacing: .05em;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,277 @@
+@use "../global" as *;
+
+#workspage {
+
+    .main {
+        padding-top: 114px;
+
+        @media screen and (min-width: 768px) {
+            padding-top: 159px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding-top: 227px;
+        }
+    }
+
+    .works {
+        padding: 75px 8% 53px;
+        background: #fff;
+        border-radius: 20px;
+
+        @media screen and (min-width: 768px) {
+            padding: 141px 6% 187px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding: 212px 8% 264px;
+            border-radius: 40px;
+        }
+
+        &__ttl {
+            @include sec-ttl;
+            animation: worksFadeup 1s ease-out forwards .4s;
+            opacity: 0;
+
+            @media screen and (min-width: 768px) {
+                @include sec-ttl($margin-bottom: 35px, $font-size: 40px);
+            }
+
+            @media screen and (min-width: 1024px) {
+                @include sec-ttl($margin-bottom: 106px, $font-size: 54px);
+            }
+
+            &::before {
+                content: "production";
+                display: block;
+                margin-bottom: 5px;
+                color: $gray;
+                font-size: 10px;
+                font-family: $font_en;
+                font-weight: 500;
+                letter-spacing: 0.2rem;
+
+                @media screen and (min-width: 768px) {
+                    font-size: 13px;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        &__sub-ttl {
+            margin-bottom: 37px;
+            padding-left: 19px;
+            font-size: 18px;
+            font-weight: 500;
+            font-family: $font_en;
+            animation: worksFadeup 1s ease-out forwards .4s;
+            opacity: 0;
+
+            @media screen and (min-width: 768px) {
+                margin-bottom: 53px;
+                padding-left: 43px;
+                font-size: 24px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 70px;
+                padding-left: 50px;
+                font-size: 32px;
+            }
+        }
+
+        &__web-box {
+            margin-bottom: 41px;
+
+
+            @media screen and (min-width: 768px) {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin-bottom: 148px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                // justify-content: center;
+                column-gap: 30px;
+                margin-bottom: 50px;
+
+                // &::after {
+                //         content: "";
+                //         width: 30%;
+                //     }
+            }
+        }
+
+        &__web-wrap {
+            width: 100%;
+            margin-bottom: 64px;
+
+            &:nth-of-type(1) {
+                animation: worksFadeup 1s ease-out .6s forwards;
+                opacity: 0;
+            }
+
+            &:nth-of-type(2) {
+                animation: worksFadeup 1s ease-out 1.2s forwards;
+                opacity: 0;
+            }
+
+            &:nth-of-type(3) {
+                animation: worksFadeup 1s ease-out 1.8s forwards;
+                opacity: 0;
+            }
+
+            &:nth-of-type(4) {
+                animation: worksFadeup 1s ease-out 2.4s forwards;
+                opacity: 0;
+            }
+
+            &:nth-of-type(5) {
+                animation: worksFadeup 1s ease-out 3s forwards;
+                opacity: 0;
+            }
+
+            &:nth-of-type(6) {
+                animation: worksFadeup 1s ease-out 3.6s forwards;
+                opacity: 0;
+            }
+
+            &:nth-of-type(7) {
+                animation: worksFadeup 1s ease-out 4s forwards;
+                opacity: 0;
+            }
+
+            @media screen and (min-width: 768px) {
+                width: 48%;
+                margin-bottom: 75px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 30%;
+                margin-bottom: 134px;
+            }
+        }
+
+
+        &__web-pic {
+            width: 100%;
+            margin: 0 auto 14px;
+        }
+
+        &__img {
+            @include img;
+        }
+
+        &__web-data {
+            margin-bottom: 4px;
+            font-size: 12px;
+            text-align: center;
+
+            @media screen and (min-width: 768px) {
+              font-size: 13px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 10px;
+              font-size: 17px;
+            }
+        }
+
+        &__web-caption {
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.4;
+
+            @media screen and (min-width: 768px) {
+                font-size: 15px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                font-size: 20px;
+            }
+        }
+
+        &__banner-box {
+
+            @media screen and (min-width: 768px) {
+                display: flex;
+                margin: 0 auto;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 61%;
+                gap: 112px;
+                margin: 0 0 0 50px;
+            }
+        }
+
+        &__banner-wrap {
+            margin-bottom: 75px;
+
+            &:nth-of-type(1) {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            &:nth-of-type(2) {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            @media screen and (min-width: 768px) {
+                margin-bottom: auto;
+
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 60%;
+            }
+        }
+
+        &__banner-pic {
+            width: 81%;
+            margin: 0 auto 14px;
+
+            @media screen and (min-width: 768px) {
+                width: 75%;
+                margin-bottom: 32px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 100%;
+            }
+        }
+
+        &__banner-data {
+            font-size: 12px;
+            text-align: center;
+
+            @media screen and (min-width: 768px) {
+              font-size: 13px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                margin-bottom: 10px;
+              font-size: 17px;
+            }
+        }
+
+        &__banner-caption {
+            font-size: 14px;
+            text-align: center;
+
+            @media screen and (min-width: 768px) {
+                font-size: 15px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                font-size: 20px;
+            }
+        }
+    }
+}

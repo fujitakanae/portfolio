@@ -1,0 +1,200 @@
+@use "../global" as *;
+
+//サイドのナビゲーションの黒丸が大きくなる
+.current.lnav__list::before {
+    transform: scale(1);
+}
+
+
+//クラス名.openMenuがついたとき、
+//オレンジの背景が上から出てくる
+.menu__wrap.openMenu::before {
+    transform: translateY(0);
+    transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.menu__wrap.openMenu {
+    pointer-events: auto;
+}
+
+//MENU⇄CLOSE
+.header__menu.openMenu::before {
+    content: "CLOSE";
+}
+
+//menuの中のナビゲーションが順番に出てくる
+.gnav__list.openMenu.gnav__list:nth-of-type(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.02s;
+}
+
+.gnav__list.openMenu.gnav__list:nth-of-type(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.15s;
+}
+
+.gnav__list.openMenu.gnav__list:nth-of-type(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.2s;
+}
+
+.gnav__list.openMenu.gnav__list:nth-of-type(4) {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.15s;
+}
+
+.menu__copy.openMenu {
+    transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.33s;
+    opacity: 1;
+}
+
+//about
+#about.is-enter .about__pic {
+    transform: translateY(0);
+    transition: all 1s ease-out;
+    opacity: 1;
+}
+
+#about.is-enter .about__ttl {
+    transform: translateY(0);
+    transition: all 1s ease-out .4s;
+    opacity: 1;
+}
+
+#about.is-enter .about__dl,
+#about.is-enter .about__txt {
+    transform: translateY(0);
+    transition: all 1s ease-out .8s;
+    opacity: 1;
+}
+
+//jQueryでis-enterのクラス名が追加された時に
+//is-enterの中の.bg__box:nth-child(1)
+#bg.is-enter .bg__box:nth-child(1) {
+    transition: opacity 0.4s linear, transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+#bg.is-enter .bg__box:nth-child(2) {
+    transition: opacity 0.4s linear 0.1s, transform 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+#bg.is-enter .bg__box:nth-child(3) {
+    transition: opacity 0.4s linear 0.2s, transform 1s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.worksFadeup {
+    position: relative;
+    top: 30px;
+    opacity: 0;
+    transition: all 1s ease-out;
+}
+
+.showElement {
+    top: 0;
+    opacity: 1;
+}
+
+//skill
+#skill.is-enter .skill__ttl {
+    transform: translateY(0);
+    transition: all 1s ease-out;
+    opacity: 1;
+}
+
+#skill.is-enter .skill__wrap {
+    transform: translateY(0);
+    transition: all 1s ease-out .4s;
+    opacity: 1;
+}
+
+//アコーディオンメニュー
+#top {
+    .skill__list--active {
+        background: linear-gradient(145deg, #EFECEA 3%, #EEE0D3 15%, #FCD9B7 30%, #FDC692 50%, #FAD4B0 70%, #F7DEC4 92%, #F5E1CE 97%, #F3E6D6 100%);
+        border-radius: 20px 20px 0 0;
+
+        .skill__txt {
+            color: $black !important;
+        }
+
+        .skill__plus::before,
+        .skill__plus::after {
+            background-color: $black !important;
+        }
+
+        .skill__plus::after {
+            transform: rotate(0);
+        }
+    }
+}
+
+//contact
+#contact.is-enter .contact__wrap {
+    transform: translateY(0);
+    transition: all 1s ease-out;
+    opacity: 1;
+}
+
+#contact.is-enter .contact__form {
+    transform: translateY(0);
+    transition: all 1s ease-out .4s;
+    opacity: 1;
+}
+
+//下層works
+
+#workspage {
+    .works__banner-box.fadeUp .works__banner-wrap:nth-of-type(1) {
+        transform: translateY(0);
+        transition: all 1s ease-out;
+        opacity: 1;
+    }
+
+    .works__banner-box.fadeUp .works__banner-wrap:nth-of-type(2) {
+        transform: translateY(0);
+        transition: all 1s ease-out .4s;
+        opacity: 1;
+    }
+}
+
+#pear,
+#lloyds,
+#wss,
+#animal,
+#azito,
+#musubi,
+#product {
+    .pear__container.fadeUp .pear__box,
+    .lloyds__container.fadeUp .lloyds__box,
+    .animal__container.fadeUp .animal__box,
+    .wss__container.fadeUp .wss__box,
+    .azito__container.fadeUp .azito__box,
+    .musubi__container.fadeUp .musubi__box,
+    .product__container.fadeUp .product__box {
+        transform: translateY(0);
+        transition: all 1s ease-out;
+        opacity: 1;
+    }
+
+    .pear__container.fadeUp .all__btn,
+    .lloyds__container.fadeUp .all__btn,
+    .animal__container.fadeUp .all__btn,
+    .wss__container.fadeUp .all__btn,
+    .azito__container.fadeUp .all__btn,
+    .musubi__container.fadeUp .all__btn,
+    .product__container.fadeUp .all__btn {
+        transform: translateY(0);
+        transition: all 1s ease-out .4s;
+        opacity: 1;
+    }
+}

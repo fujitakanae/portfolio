@@ -1,0 +1,179 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.gnav {
+    display: none;
+
+    @media screen and (min-width: 1024px) {
+        display: block;
+    }
+
+    &__nav {
+        @media screen and (min-width: 1024px) {
+            display: flex;
+            align-items: flex-end;
+            gap: 100px;
+        }
+    }
+
+    &__list {
+        @media screen and (min-width: 1024px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &:hover .gnav__link::before{
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    &__link {
+        
+        @media screen and (min-width: 1024px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: $black;
+            font-size: 16px;
+            text-decoration: none;
+
+            &::before {
+                content: "";
+                display: block;
+                background: url(../images/icon_04.svg);
+                width: 39px;
+                height: 32px;
+                margin-bottom: 15px;
+                transition: .3s;
+            }
+
+        }
+    }
+
+    &__link--news::before {
+        background: url(../images/icon_01.svg);
+        width: 28px;
+        height: 32px;
+    }
+    &__link--about::before {
+        background: url(../images/icon_02.svg);
+        width: 35px;
+        height: 37px;
+    }
+    &__link--producer::before {
+        background: url(../images/icon_03.svg);
+        width: 33px;
+        height: 28px;
+    }
+
+
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    z-index: 20;
+
+    @media screen and (min-width: 1024px) {
+        display: none;
+    }
+
+    &__menu {
+        border-top: 1px solid $green;
+    }
+
+    &__nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__list {
+
+        display: flex;
+        width: 50%;
+        border-bottom: 1px solid $green;
+
+        &:nth-of-type(1),
+        &:nth-of-type(3) {
+            border-right: 1px solid $green;
+        }
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 16px 0;
+        color: $black;
+        font-size: 15px;
+        text-decoration: none;
+
+        &::before {
+            content: url(../images/icon_04.svg);
+            display: block;
+            width: 36px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+    }
+
+    &__link--news::before {
+        content: url(../images/icon_01.svg);
+        display: block;
+        width: 26px;
+        height: 31px;
+    }
+
+    &__link--about::before {
+        content: url(../images/icon_02.svg);
+        display: block;
+        width: 32px;
+        height: 34px;
+    }
+
+    &__link--producer::before {
+        content: url(../images/icon_03.svg);
+        display: block;
+        width: 30px;
+        height: 26px;
+    }
+
+    &__inquiry {
+        padding: 32px 0;
+        background: $main;
+        border-bottom: 1px solid $green;
+    }
+
+    &__contact {
+        margin-bottom: 9px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    &__tel {
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    &__tel-link {
+        color: $black;
+        font-size: 26px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    &__reception-time {
+        font-size: 14px;
+        text-align: center;
+    }
+
+}

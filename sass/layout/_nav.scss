@@ -1,0 +1,325 @@
+@use "../global" as *;
+
+//menuの中
+.menu {
+    &__wrap {
+        position: fixed;
+        width: 100%;
+        height: 50vh;
+        top: 0;
+        z-index: 7;
+        padding: 0 8%;
+        pointer-events: none;
+
+        @media screen and (min-width: 768px) {
+            padding: 0 6%;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding: 0 5.5%;
+        }
+
+        //オレンジの背景
+        &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            top: 0;
+            left: 0;
+            z-index: 6;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #EFECEA 3%, #EEE0D3 15%, #FCD9B7 30%, #FDC692 50%, #FAD4B0 70%, #F7DEC4 92%, #F5E1CE 97%, #F3E6D6 100%);
+            border-radius: 0 0 40px 40px;
+            transform: translateY(-100%);
+            transition: 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+    }
+
+    &__inner {
+        position: absolute;
+        z-index: 7;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        padding: 0 8%;
+        transform: translate(-50%, -50%);
+
+        @media screen and (min-width: 768px) {
+            padding: 0 8%;
+        }
+    }
+
+    &__copy {
+        position: absolute;
+        bottom: 50px;
+        z-index: 7;
+        width: 84%;
+        padding-top: 9px;
+        border-top: 1px solid $black;
+        opacity: 0;
+        transition: .2s;
+
+        @media screen and (min-width: 768px) {
+            width: 88%;
+        }
+
+        @media screen and (min-width: 1024px) {
+            width: 89%;
+        }
+    }
+
+    &__small {
+        font-size: 10px;
+        font-family: $font_en;
+
+        @media screen and (min-width: 768px) {
+            font-size: 13px;
+        }
+    }
+}
+
+
+//menuの中のナビゲーション部分
+.gnav {
+    position: relative;
+    z-index: 7;
+
+    &__list {
+        margin-bottom: 20px;
+        transform: translateY(10px);
+        transition: 0.2s linear;
+        opacity: 0;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 36px;
+        }
+
+        &:nth-of-type(3) {
+            margin: auto;
+        }
+
+        &:nth-of-type(4) {
+            position: absolute;
+            top: 50px;
+            right: 0;
+
+            @media screen and (min-width: 768px) {
+                top: 53px;
+            }
+
+            @media screen and (min-width: 1024px) {
+                right: 100px;
+            }
+        }
+    }
+
+
+    &__link {
+        display: inline-block;
+        color: $black;
+        font-size: 20px;
+        font-weight: 500;
+        text-decoration: none;
+
+        @media screen and (min-width: 768px) {
+            font-size: 20px;
+        }
+    }
+
+    &__child {
+        padding: 12px 0 0 12px;
+    }
+
+    &__child-link {
+        color: $black;
+        font-size: 14px;
+        font-family: $font_en;
+        text-decoration: none;
+    }
+
+    &__link-fontsize {
+        font-size: 22px;
+
+        @media screen and (min-width: 768px) {
+            font-size: 44px;
+            font-weight: 500;
+            letter-spacing: 0.05rem;
+        }
+    }
+}
+
+//サイドのナビゲーション
+.lnav {
+    display: none;
+
+    @media screen and (min-width: 1024px) {
+        display: inline;
+        position: fixed;
+        top: 0;
+        right: 6.5%;
+        z-index: 5;
+        display: flex;
+        align-items: center;
+        width: auto;
+        height: 100vh;
+        animation: headerFadeup 1s forwards .4s;
+        opacity: 0;
+    }
+
+
+    &__list {
+        @media screen and (min-width: 1024px) {
+
+            position: relative;
+            width: 20px;
+            height: 20px;
+            margin: 10px 0;
+            list-style-type: none;
+
+            //丸
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                background: $gray;
+                border-radius: 50%;
+                //丸を見えなくしている
+                transform: scale(0);
+                transition: .3s;
+                pointer-events: none;
+            }
+
+            &:hover::before {
+                transform: scale(1);
+            }
+        }
+
+    }
+
+    &__link {
+
+        @media screen and (min-width: 1024px) {
+
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            //線
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: block;
+                width: 12px;
+                height: 1px;
+                margin: auto;
+                background: $black;
+            }
+        }
+    }
+}
+
+//フッターのナビゲーション
+.fnav {
+    margin-bottom: 62px;
+
+    @media screen and (min-width: 768px) {
+        margin-bottom: 28px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        margin-bottom: 32px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 86%;
+
+        @media screen and (min-width: 768px) {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            width: 63%;
+            margin-right: auto;
+        }
+
+        @media screen and (min-width: 1024px) {
+            // width: 33%;
+            justify-content: start;
+            gap: 90px;
+            width: auto;
+            margin-right: 0;
+        }
+    }
+
+    &__list {
+        &:nth-of-type(1) {
+            margin-right: 53px;
+
+            @media screen and (min-width: 768px) {
+                margin-right: 0;
+            }
+        }
+
+        &:nth-of-type(3) {
+            margin-right: 75px;
+
+            @media screen and (min-width: 768px) {
+                margin-right: 0;
+            }
+        }
+    }
+
+
+    &__link {
+        display: block;
+        padding: 10px 0;
+        color: $black;
+        font-size: 19px;
+        font-family: $font_en;
+        text-decoration: none;
+        transition: .2s linear;
+
+        @media screen and (min-width: 768px) {
+            font-size: 21px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            font-size: 24px;
+        }
+
+        &:hover {
+            color: $gray;
+            transition: .2s linear;
+        }
+    }
+
+    &__child-link {
+        display: block;
+        margin-left: 12px;
+        padding: 7px 0;
+        color: $black;
+        text-decoration: none;
+        transition: .1s linear;
+
+        @media screen and (min-width: 768px) {
+            margin-left: 14px;
+            font-size: 13px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            font-size: 14px;
+        }
+
+        &:hover {
+            color: $gray;
+        }
+    }
+}

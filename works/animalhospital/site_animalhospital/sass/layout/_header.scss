@@ -1,0 +1,83 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.btn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 31px;
+    cursor: pointer;
+    z-index: 2;
+
+    &__top,
+    &__middle,
+    &__bottom {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: $gray;
+        transition: .4s;
+    }
+
+    &__top {
+        transform: translateY(-16px);
+    }
+
+    &__bottom {
+        transform: translateY(16px);
+    }
+}
+
+.header {
+    font-family: $sans;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 41px 20px 82px;
+
+
+    &__inquiry {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 9px;
+        width: 327px;
+        height: 107px;
+        background: $acc;
+        transition: .5s;
+        cursor: pointer;
+        &::before {
+            content: "";
+            display: block;
+            width: 71px;
+            height: 71px;
+            background: url(../images/tel.png)center center / cover;
+        }
+
+        &:hover {
+            background: $acc;
+        }
+    }
+
+    &__span {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+    }
+
+    &__tel {
+        font-size: 27px;
+        font-family: $sen;
+        text-align: center;
+    }
+}

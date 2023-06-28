@@ -1,0 +1,86 @@
+@use "../global" as *;
+
+#informationpage {
+
+    .information {
+        padding-top: 147px;
+
+        &__bg {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 253px;
+            background: url(../images/lowerpage_bg.jpg) center center / cover;
+            margin-bottom: 175px;
+        }
+
+        &__ttl {
+            position: absolute;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 55px;
+            font-weight: 700;
+            font-family: $sen;
+            letter-spacing: 0.12em;
+
+            &::after {
+                content: "お知らせ";
+                display: block;
+                font-size: 12px;
+                font-weight: 400;
+                letter-spacing: 0.12em;
+            }
+        }
+
+        &__wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 88px;
+            width: 74%;
+            margin: 0 auto 175px;
+        }
+
+        &__link {
+            display: block;
+            color: $gray;
+            text-decoration: none;
+        }
+
+        &__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__pic {
+            width: 412px;
+            height: 291px;
+            margin-bottom: 23px;
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &__data {
+            margin-bottom: 16px;
+            font-size: 14px;
+            font-family: $sen;
+        }
+
+        &__head {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    }
+
+}

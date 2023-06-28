@@ -1,0 +1,1073 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#top {
+
+
+    .main {
+        font-family: $font_jp;
+        font-weight: bold;
+
+
+        .sub__ttl {
+            font-size: 80px;
+            font-family: $font_en;
+            font-weight: 600;
+            color: $acc;
+            opacity: 0;
+        }
+
+        .txt__color {
+            color: $acc;
+        }
+
+        .all__btn {
+            width: 200px;
+            text-align: center;
+
+            &--link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 21px 0;
+                text-decoration: none;
+                border: 1px solid $acc;
+                border-radius: 30px;
+                font-weight: 600;
+                font-family: $font_en;
+                color: $acc;
+                transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+
+                &:hover {
+                    background: $acc;
+                    color: #fff;
+
+                    &::after {
+                        background: url(../images/botton_arrow_hover.svg) center center / cover;
+                    }
+                }
+            }
+
+            &--link::after {
+                content: "";
+                display: block;
+                width: 15px;
+                height: 8px;
+                margin-left: 47px;
+                background: url(../images/botton_arrow.svg) center center / cover;
+            }
+
+        }
+
+        //------------背景色が伸びるアニメーション------------
+
+        .square__anime {
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: $acc;
+                animation: square__anime 1.5s ease-in-out both;
+            }
+        }
+
+        @keyframes square__anime {
+
+            0% {
+                transform: translateX(-100%);
+            }
+
+            30% {
+                transform: translateX(0%);
+            }
+
+            50% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+
+        }
+
+        .appear {
+            opacity: 0;
+            animation: appear 1.5s ease-in-out 0.5s forwards;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        //-----------------------------------------
+
+        .mv {
+            margin-bottom: 861px;
+            padding-top: 161px;
+
+            &__top {
+
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 205px;
+                    right: 105px;
+                    width: 8px;
+                    height: 318px;
+                    background: $acc;
+                    opacity: 0;
+                    animation: border-right 3s 1.2s ease infinite;
+                    z-index: 3;
+                    transition: top 0.8s ease-in-out;
+                    transform-origin: bottom center;
+                }
+
+                @keyframes border-right {
+                    0% {
+                        height: 0%;
+                        top: 0px;
+                        opacity: 1;
+                        transform: translatex(-50%);
+                    }
+
+                    40% {
+                        height: 318px;
+                        top: 0px;
+                        opacity: 1;
+                        transform: translatex(-50%);
+                    }
+
+                    60% {
+                        height: 318px;
+                        top: 0px;
+                        opacity: 1;
+                        transform: translatex(-50%);
+                    }
+
+                    100% {
+                        height: 318px;
+                        top: 0px;
+                        opacity: 1;
+                        transform: translatex(-50%) scale(1, 0);
+                    }
+                }
+
+                &--animebox {
+                    width: 320px;
+                    height: 309px;
+                    margin-left: auto;
+                }
+            }
+
+            &__pic {
+                width: 320px;
+                height: 309px;
+            }
+
+            &__img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &__copy {
+                position: relative;
+                margin-bottom: 189px;
+                z-index: 1;
+
+                &--top {
+                    position: absolute;
+                    top: -144px;
+                    left: 220px;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: 120px;
+                    font-weight: 600;
+                    font-family: $font_en;
+                    line-height: .9em;
+                    opacity: 0;
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: calc(100% + 235px);
+                        left: -30px;
+                        width: 8px;
+                        height: 230px;
+                        background: $acc;
+                        opacity: 0;
+                        animation: border-anime 3s 1.2s ease infinite;
+                        z-index: 2;
+                        transform-origin: bottom center;
+                        transition: top 0.6s 0.2s ease-in-out, height 0.6s 0.2s ease-in-out;
+                    }
+                }
+
+                //------------縦線アニメーション------------
+
+                @keyframes border-anime {
+                    0% {
+                        height: 0%;
+                        top: 0;
+                        opacity: 1;
+                        transform: translatex(-50%);
+                    }
+
+                    40% {
+                        height: calc(100% + 230px);
+                        top: 0;
+                        opacity: 1;
+                        transform: translatex(-50%);
+                    }
+
+                    60% {
+                        height: calc(100% + 230px);
+                        top: 0;
+                        opacity: 1;
+                        transform: translatex(-50%);
+                    }
+
+                    100% {
+                        height: calc(100% + 230px);
+                        top: 0;
+                        // top: 318px;
+                        opacity: 1;
+                        transform: translatex(-50%) scale(1, 0);
+                    }
+                }
+
+
+                &--animebox {
+                    width: 855px;
+                    height: 205px;
+                }
+
+                &--span {
+                    padding-left: 53px;
+                }
+            }
+
+            &__jpcopy {
+                position: absolute;
+                top: 562px;
+                left: 226px;
+                font-size: 24px;
+                overflow: hidden;
+                letter-spacing: .05em;
+                opacity: 0;
+
+                &--jpcopyanimebox {
+                    width: 565px;
+                    height: 205px;
+                }
+            }
+
+            //--------mv__bottomスライドショー--------------
+
+            &__bottom {
+                position: relative;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: -12px;
+                    right: 318px;
+                    width: 19px;
+                    height: 19px;
+                    border-top: 2px solid #fff;
+                    border-right: 2px solid #fff;
+                    transform: rotate(135deg);
+                    z-index: 2;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -7px;
+                    right: 312px;
+                    width: 34px;
+                    height: 2px;
+                    background: #fff;
+                    z-index: 3;
+                    transform: rotate(90deg);
+                }
+
+                &--circle {
+                    position: absolute;
+                    top: -50px;
+                    right: 284px;
+                    width: 88px;
+                    height: 88px;
+                    border-radius: 50%;
+                    background: $acc;
+                    z-index: 2;
+
+                    &::after {
+                        content: url(../images/top_scroll_down.svg);
+                        display: block;
+                        position: absolute;
+                        top: -20px;
+                        right: -20px;
+                        animation: circle 15s linear infinite;
+                    }
+
+                    //------------scroll文字アニメーション------------
+                    @keyframes circle {
+                        0% {
+                            transform: rotate(0deg);
+                        }
+
+                        100% {
+                            transform: rotate(360deg);
+                        }
+                    }
+
+                }
+
+                &--slide {
+                    position: relative;
+                }
+
+                &--pic {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 1575px;
+                    height: 818px;
+                }
+
+                &--img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+        }
+
+        //-----------PDFボタン----------------
+
+        .pdf {
+            position: relative;
+            top: 0;
+            right: calc(-100vw + 140px);
+            width: 123px;
+            line-height: 1.5rem;
+
+            &__link {
+                display: block;
+                padding: 39px 20px;
+                color: #fff;
+                text-decoration: none;
+                text-align: center;
+                border: 1px solid $acc;
+                background: $acc;
+                transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+
+                &:hover {
+                    background: #fff;
+                    color: $acc;
+                    border: 1px solid $acc;
+                }
+            }
+        }
+
+
+        //------------WSS----------------
+
+        .wss {
+            padding: 356px 300px 200px;
+            margin-bottom: 387px;
+            text-align: center;
+            background: $base;
+
+            &__container--01 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &__animebox {
+                width: 420px;
+                height: 120px;
+                margin-bottom: 53px;
+            }
+
+            &__ttl {
+                margin-bottom: 10px;
+                letter-spacing: .05em;
+                opacity: 0;
+            }
+
+            &__txt--01 {
+                margin-bottom: 30px;
+                font-size: 32px;
+                line-height: 3rem;
+                letter-spacing: .05em;
+            }
+
+            &__txt--02 {
+                margin-bottom: 70px;
+                padding: 0 250px;
+                line-height: 2rem;
+            }
+
+            &__link {
+                color: $acc;
+
+                &:hover {
+                    color: blue;
+                }
+            }
+
+            &__txt--03 {
+                margin-bottom: 70px;
+                font-size: 32px;
+                letter-spacing: .05em;
+            }
+
+            &__container--02 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            &__wrapp {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                margin-bottom: 92px;
+            }
+
+            &__box {
+
+                &--pic {
+                    width: 400px;
+                    height: 300px;
+                    margin-bottom: 15px;
+                }
+
+                &--img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &--txt {
+                    font-size: 24px;
+                    letter-spacing: .05em;
+                }
+            }
+
+        }
+
+        //------WEB制作ってなに？---------
+
+        .web {
+            display: flex;
+            margin-bottom: 429px;
+            padding: 0 320px;
+
+            &__container {
+                display: flex;
+                flex-direction: column;
+                width: 460px;
+            }
+
+            &__animebox {
+                width: 445px;
+                height: 161px;
+                margin-bottom: 85px;
+            }
+
+            &__ttl {
+                margin-bottom: 16px;
+                letter-spacing: .05em;
+            }
+
+            &__sub {
+                margin-bottom: 85px;
+                line-height: 4rem;
+            }
+
+            &__txt--01 {
+                margin-bottom: 36px;
+                font-size: 32px;
+                line-height: 3rem;
+                letter-spacing: .05em;
+            }
+
+            &__txt--02 {
+                margin-bottom: 70px;
+                line-height: 2rem;
+            }
+
+            &__photo {
+                position: relative;
+                width: 673px;
+            }
+
+            &__photo--01 {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 489px;
+                height: 640px;
+                background: url(../images/web_01.jpg) center center / cover;
+            }
+
+            &__photo--02 {
+                position: absolute;
+                top: -125px;
+                right: -134px;
+                width: 230px;
+                height: 312px;
+                background: url(../images/web_02.jpeg) center center / cover;
+            }
+
+        }
+
+        //--------授業の流れ-----------
+
+        .lesson {
+            position: relative;
+            width: 100%;
+            height: 265px*2;
+            margin-bottom: 430px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+
+            &__link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+                width: 100%;
+                height: 100%;
+                z-index: 3;
+            }
+
+            &__box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 767px;
+                height: 100%;
+                text-align: center;
+                background: #ffffffc9;
+            }
+
+            &__animebox {
+                width: 280px;
+                height: 105px;
+                margin-bottom: 82px;
+            }
+
+            &__ttl {
+                margin-bottom: 8px;
+                letter-spacing: .05em;
+            }
+
+            &__sub {
+                font-family: $font_en;
+            }
+
+            &__txt {
+                line-height: 2rem;
+            }
+
+            &__slid {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -3;
+
+                //上スライド
+
+                &--top {
+                    display: flex;
+                    height: 265px;
+                }
+
+                &--wrap1 {
+                    display: flex;
+                    animation: slid-left 100s linear infinite;
+                }
+
+                //------------上下スライド背景------------
+
+                @keyframes slid-left {
+                    from {
+                        transform: translateX(0);
+                    }
+
+                    to {
+                        transform: translateX(-100%);
+                    }
+                }
+
+                &--list {
+                    width: 480px;
+                    height: 265px;
+                    list-style-type: none;
+                }
+
+                &--img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                //下スライド
+
+                &--bottom {
+                    display: flex;
+                }
+
+                &--wrap2 {
+                    display: flex;
+                    animation: slid-right 100s linear infinite;
+                }
+
+                @keyframes slid-right {
+                    from {
+                        transform: translateX(-100%);
+                    }
+
+                    to {
+                        transform: translateX(0);
+                    }
+                }
+
+            }
+
+        }
+
+        //--------就職に関すること---------------
+
+        .job {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 320px;
+            margin-bottom: 452px;
+
+            &__container--01 {
+                position: relative;
+            }
+
+            &__graph {
+                width: 630px;
+                height: 630px;
+
+                &--img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &--box {
+                    position: absolute;
+                    top: 155px;
+                    left: 170px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                &--ttl {
+                    margin-bottom: 70px;
+                    font-size: 32px;
+                    letter-spacing: .05em;
+                    font-family: $font_en;
+                }
+
+                &--span {
+                    font-weight: 400;
+                    font-size: 40px;
+                    font-family: $font_en;
+                }
+
+                &--value {
+                    font-size: 120px;
+                    font-weight: 600;
+                }
+
+                &--txt {
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 2rem;
+                }
+            }
+
+            &__container--02 {
+                display: flex;
+                flex-direction: column;
+                width: 472px;
+            }
+
+            &__animebox {
+                width: 522px;
+                height: 120px;
+                margin-bottom: 85px;
+            }
+
+            &__ttl {
+                margin-bottom: 10px;
+                letter-spacing: .05em;
+            }
+
+            &__sub {
+                margin-bottom: 85px;
+            }
+
+            &__txt--01 {
+                margin-bottom: 36px;
+                font-size: 32px;
+                line-height: 3rem;
+                letter-spacing: .05em;
+            }
+
+            &__txt--02 {
+                margin-bottom: 70px;
+                line-height: 2rem;
+            }
+
+            &::before {
+                position: absolute;
+                top: -130px;
+                right: 0;
+                content: "";
+                display: block;
+                width: 1289px;
+                height: 479px;
+                background: $base;
+                z-index: -1;
+            }
+
+            &::after {
+                position: absolute;
+                top: 307px;
+                left: 0;
+                content: "";
+                display: block;
+                width: 1760px;
+                height: 479px;
+                background: $base;
+                z-index: -1;
+            }
+        }
+
+
+        //--------インタビュー--------------
+
+        .interview {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 558px;
+
+            &::after {
+                position: absolute;
+                top: 575px;
+                left: 0;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1178px;
+                background: $base;
+                z-index: -1;
+            }
+
+            &__animebox {
+                width: 375px;
+                height: 120px;
+                margin-bottom: 85px;
+            }
+
+            &__ttl {
+                margin-bottom: 10px;
+                letter-spacing: .05em;
+            }
+
+            &__sub {
+                margin-bottom: 85px;
+            }
+
+            &__txt--01 {
+                margin-bottom: 42px;
+                font-size: 32px;
+                font-weight: bold;
+                letter-spacing: .05em;
+            }
+
+            &__txt--02 {
+                margin-bottom: 70px;
+                text-align: center;
+                line-height: 2rem;
+            }
+
+            &__container {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 0 95px;
+                margin-bottom: 350px;
+            }
+
+            &__box {
+                width: 520px;
+
+                &:nth-child(2) {
+                    position: absolute;
+                    top: 190px;
+                    left: 697px;
+                }
+            }
+
+            &__pic {
+                height: 750px;
+            }
+
+            &__img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &__txt--box {
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    top: -140px;
+                    right: 0;
+                    content: "";
+                    display: block;
+                    width: 466px;
+                    height: 241px;
+                    background: #fff;
+                }
+            }
+
+            &__txt {
+                position: absolute;
+                top: -90px;
+                left: 110px;
+                z-index: 1;
+                letter-spacing: .05em;
+                line-height: 2;
+            }
+
+            &__year {
+                position: absolute;
+                top: 7px;
+                left: 110px;
+                z-index: 1;
+                font-size: 12px;
+                letter-spacing: .05em;
+            }
+
+            &__name {
+                position: absolute;
+                top: 27px;
+                left: 110px;
+                z-index: 1;
+                letter-spacing: .05em;
+            }
+        }
+
+        //--------説明会について--------------
+
+        .session {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            margin-left: 300px;
+
+            &__animebox {
+                width: 310px;
+                height: 120px;
+                margin-bottom: 85px;
+            }
+
+            &__ttl {
+                margin-bottom: 10px;
+                letter-spacing: .05em;
+            }
+
+            &__sub {
+                margin-bottom: 85px;
+                color: $acc;
+            }
+
+            &__txt--01 {
+                margin-bottom: 36px;
+                font-size: 32px;
+                line-height: 1.5em;
+                letter-spacing: .05em;
+            }
+
+            &__txt--02 {
+                margin-bottom: 70px;
+                line-height: 2rem;
+            }
+
+            &__photo {
+                position: absolute;
+                top: -155px;
+                right: 0px;
+                width: 960px;
+                height: 700px;
+            }
+
+            &__img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &::after {
+                position: absolute;
+                top: 69px;
+                left: -300px;
+                content: "";
+                display: block;
+                width: 1600px;
+                height: 700px;
+                background: $base;
+                z-index: -1;
+            }
+        }
+
+        //---------よくある質問--------------
+
+        .question {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 511px 320px 251px 320px;
+            text-align: center;
+
+            &__animebox {
+                width: 180px;
+                height: 120px;
+                margin-bottom: 85px;
+            }
+
+            &__ttl {
+                margin-bottom: 10px;
+                letter-spacing: .05em;
+            }
+
+            &__sub {
+                margin-bottom: 70px;
+                color: $acc;
+            }
+
+            &__ul {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 90px;
+                list-style-type: none;
+            }
+
+            &__list {
+                width: 413px;
+                margin-right: 15px;
+                color: #fff;
+                letter-spacing: .05em;
+            }
+
+            &__link {
+                display: block;
+                padding: 50px 80px;
+                background: $acc;
+                border: 1px solid $acc;
+                color: #fff;
+                text-decoration: none;
+                transition: background 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+
+                &:hover {
+                    display: block;
+                    border: 1px solid $acc;
+                    background: #fff;
+                    color: $acc;
+                    transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+                }
+            }
+
+        }
+
+
+        //--------学校情報-------------
+
+        .access {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__container {
+                padding: 115px 320px;
+                width: 960px;
+                height: 600px;
+                background: $base;
+            }
+
+            &__animebox {
+                width: 290px;
+                height: 120px;
+                margin-bottom: 85px;
+            }
+
+            &__ttl {
+                margin-bottom: 10px;
+                letter-spacing: .05em;
+            }
+
+            &__sub {
+                color: $acc;
+            }
+
+            &__ul {
+                line-height: 2rem;
+                list-style-type: none;
+            }
+        }
+    }
+}

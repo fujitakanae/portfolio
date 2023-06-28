@@ -1,0 +1,28 @@
+// settingフォルダの変数を読み込みます
+
+@use "../setting" as *;
+
+@mixin img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin sec-ttl($margin-bottom: 80px) {
+    margin-bottom: $margin-bottom;
+    font-size: 60px;
+    font-family: $font_en;
+    font-weight: 400;
+    // font-style: italic;
+    letter-spacing: 0.04em;
+    text-align: center;
+
+}
+
+@mixin sec-txt($margin-bottom: 40px) {
+    margin-bottom: $margin-bottom;
+    letter-spacing: 0.13em;
+    line-height: 2;
+    text-align: center;
+}

@@ -1,0 +1,62 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+.footer {
+    // width: 1600px;
+    // margin: 0 auto;
+    padding: 110px 0 30px;
+    background: $pink;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        width: 1600px;
+        margin: 0 auto 110px;
+    }
+
+
+    &__logo {
+        color: #fff;
+        font-size: 110px;
+        font-family: $font_en;
+        letter-spacing: 0.03em;
+    }
+    &__menu {
+        margin-left: 56px;
+    }
+
+    &__copy {
+        margin-bottom: 21px;
+        text-align: center;
+    }
+
+    &__small {
+        color: #fff;
+        font-size: 16px;
+    }
+}
+
+.fnav {
+
+    display: flex;
+
+    &__link {
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        font-family: $font_en;
+        letter-spacing: 0.03em;
+        line-height: 51px;
+        text-decoration: none;
+    }
+}
+
+.menu__link {
+    display: block;
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    line-height: 51px;
+    text-decoration: none;
+}

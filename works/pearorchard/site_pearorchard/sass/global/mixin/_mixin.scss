@@ -1,0 +1,32 @@
+// settingフォルダの変数を読み込みます
+
+@use "../setting" as *;
+
+@mixin img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin ttl {
+    margin-bottom: 23px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+
+    @media screen and (min-width: 1024px) {
+        margin-bottom: 70px;
+        font-size: 36px;
+        font-weight: 700;
+    }
+}
+
+@mixin sub-ttl {
+    font-size: 18px;
+    line-height: 2;
+
+    @media screen and (min-width: 1024px) {
+        font-size: 23px;
+    }
+}

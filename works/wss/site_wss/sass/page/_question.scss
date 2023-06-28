@@ -1,0 +1,325 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#question {
+
+    .main {
+        font-family: $font_jp;
+        font-weight: bold;
+        padding-top: 323px;
+
+        .question {
+
+            &__top {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 100px;
+                margin-bottom: 257px;
+            }
+
+            &__box01 {
+                display: flex;
+                align-items: center;
+                gap: 100px;
+            }
+
+            &__ttl--box {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 183px;
+            }
+
+            &__ttl {
+                margin-bottom: 10px;
+                opacity: 0;
+            }
+
+            &__sub {
+                font-family: $font_en;
+                font-size: 80px;
+                font-weight: 600;
+                color: $acc;
+                opacity: 0;
+            }
+
+            &__notice {
+                margin-left: 51px;
+                font-size: 32px;
+            }
+
+            &__box02 {
+                display: flex;
+                align-items: center;
+                gap: 100px;
+            }
+
+            &__txt--01 {
+                width: 640px;
+                line-height: 1.5rem;
+                letter-spacing: .05em;
+            }
+
+            &__txt--02 {
+                width: 640px;
+                line-height: 1.5rem;
+                letter-spacing: .05em;
+            }
+
+            &__wrap {
+                position: relative;
+                display: flex;
+            }
+
+            //-------------左固定----------
+
+            &__side {
+                width: 250px;
+                margin: 80px 0 80px 115px;
+            }
+
+            &__nav {
+                position: sticky;
+                top: 380px;
+                left: 115px;
+            }
+
+            &__ul {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 216px;
+            }
+
+            &__link {
+                display: block;
+                padding: 20px 0;
+                color: #000;
+                text-decoration: none;
+
+                &:hover {
+                    color: $acc;
+                }
+            }
+
+            //----------------Q&A---------------
+
+            &__right--container {
+                width: 1100px;
+                margin-left: 185px;
+            }
+
+            &__category {
+                font-size: 32px;
+                padding: 150px 0 50px;
+                border-bottom: 1px solid #000;
+            }
+
+            &__inner--box {
+                width: 960px;
+                margin: 0 auto 110px;
+            }
+
+            &__questionbox {
+                position: relative;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                transition: 0.3s;
+                border-top: 1px solid #000;
+
+                &:first-child {
+                    border-top: 1px solid transparent;
+                }
+            }
+
+            &__dl {
+                display: flex;
+                align-items: center;
+            }
+
+            &__dt {
+                width: 120px;
+                height: 45px;
+                margin-right: 63px;
+                padding: 12px;
+                border: 1px solid #000;
+                border-radius: 30px;
+                text-align: center;
+                font-family: $font_en;
+                font-weight: 600;
+            }
+
+            &__q {
+                display: flex;
+                align-items: center;
+                width: 640px;
+                padding: 80px 0;
+                line-height: 1.5rem;
+                letter-spacing: .05em;
+            }
+
+            &__togglebtn {
+                position: relative;
+                width: 45px;
+                height: 45px;
+                margin-left: 80px;
+                border: 1px solid #000;
+                border-radius: 50%;
+
+                //横線
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 21px;
+                    right: 11px;
+                    width: 20px;
+                    height: 2px;
+                    background: #000;
+                    transform: rotate(0deg);
+                }
+
+                //縦線
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 12px;
+                    right: 20px;
+                    width: 2px;
+                    height: 20px;
+                    background: #000;
+                    transform: rotate(180deg);
+                    transition: all 0.5s;
+                }
+
+            }
+
+            &__answer--wrap {
+                display: none;
+                padding: 0 0 80px;
+            }
+
+            &__answerbox {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            &__a {
+                width: 640px;
+                margin-right: auto;
+                line-height: 1.5rem;
+                letter-spacing: .05em;
+            }
+
+
+            .selected {
+
+                ::after {
+                    opacity: 0;
+                    transform: rotate(0deg);
+                }
+            }
+
+        }
+
+
+        .btn {
+            position: relative;
+            width: 355px;
+            margin-left: 174px;
+            text-align: center;
+
+            &__link {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 21px 0;
+                text-decoration: none;
+                border: 1px solid $acc;
+                border-radius: 40px;
+                color: $acc;
+                transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+
+                &:hover {
+                    background: $acc;
+                    color: #fff;
+
+                    &::after {
+                        background: url(../images/botton_arrow_hover.svg) center center / cover;
+                    }
+                }
+            }
+
+            &__link::after {
+                content: "";
+                display: block;
+                width: 15px;
+                height: 8px;
+                margin-left: 18px;
+                background: url(../images/botton_arrow.svg) center center / cover;
+            }
+        }
+
+        .square__anime {
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: $acc;
+                animation: square__anime 1.5s ease-in-out both;
+            }
+        }
+
+
+        @keyframes square__anime {
+
+            0% {
+                transform: translateX(-100%);
+            }
+
+            30% {
+                transform: translateX(0%);
+            }
+
+            50% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+
+        }
+
+        .appear {
+            opacity: 0;
+            animation: appear 1.5s ease-in-out 0.5s forwards;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+}

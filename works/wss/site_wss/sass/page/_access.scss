@@ -1,0 +1,218 @@
+//各ファイルは必ず登録済みの変数を最初に読み込みます
+//as *で読み込みファイル名を省略することができます
+@use "../global" as *;
+
+#access {
+    .access {
+        background: $base;
+        font-family: $font_jp;
+        font-weight: 700;
+
+        &__container--01 {
+            position: relative;
+            padding: 160px;
+            display: flex;
+            margin: 200px 0 0;
+            background: #fff;
+        }
+
+        &__ttl {
+            margin-bottom: 14px;
+            opacity: 0;
+        }
+
+        &__sub {
+            margin-bottom: 100px;
+            font-family: $font_en;
+            font-weight: 600;
+            font-size: 80px;
+            color: $acc;
+            opacity: 0;
+        }
+
+        &__cap {
+            margin-bottom: 48px;
+            font-family: $font_en;
+            font-size: 32px;
+        }
+
+        &__txt {
+            line-height: 1.5;
+            font-size: 16px;
+        }
+
+        &__pic {
+            position: absolute;
+            bottom: -150px;
+            right: 0;
+        }
+
+        &__img {
+            display: block;
+        }
+
+        &__container--02 {
+            position: relative;
+            padding: 435px 320px 206px;
+        }
+
+        &__company {
+            position: absolute;
+            top: 320px;
+            right: 320px;
+            font-family: $font_en;
+            font-size: 160px;
+            color: #fff;
+            text-align: right;
+        }
+
+        &__box--02 {
+            padding: 87px 305px;
+            margin-bottom: 80px;
+            background: #fff;
+        }
+
+        &__dlttl {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            font-size: 32px;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 10px;
+                height: 50px;
+                margin-right: 30px;
+                background: $acc;
+            }
+        }
+
+        &__dl {
+            display: flex;
+            margin-bottom: 40px;
+        }
+
+        &__dt {
+            margin-right: 80px;
+            width: 66px;
+        }
+
+        &__dd {
+            margin-right: auto;
+        }
+        &__btn{
+            margin: 8px auto 0;
+            width: 355px;
+        }
+
+        &__link {
+            position: relative;
+            display: block;
+            align-items: center;
+            padding: 20px 27px 20px 55px;
+            text-decoration: none;
+            border: 1px solid $acc;
+            border-radius: 50px;
+            color: $acc;
+            transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+    
+            &:hover {
+                background: $acc;
+                color: $base;
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                top: 23px;
+                right: 22px;
+                width: 8px;
+                height: 8px;
+                border-top: 1px solid $acc;
+                border-right: 1px solid $acc;
+                transform: rotate(45deg);
+            }
+            &::before{
+                content: "";
+                position:  absolute;
+                top: 27px;
+                right: 22px;
+                width: 15px;
+                height: 1px;
+                background: $acc;
+            }
+
+        }
+
+        //-------------------------------------
+
+
+        .animebox {
+            width: 580px;
+            height: 115px;
+            margin-bottom: 95px;
+        }
+
+        .square__anime {
+            position: relative;
+            overflow: hidden;
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                background: $acc;
+                animation: square__anime 1.5s ease-in-out both;
+            }
+        }
+
+
+        @keyframes square__anime {
+
+            0% {
+                transform: translateX(-100%);
+            }
+
+            30% {
+                transform: translateX(0%);
+            }
+
+            50% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
+
+        }
+
+        .appear {
+            opacity: 0;
+            animation: appear 1.5s ease-in-out 0.5s forwards;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+
+
+
+
+}
